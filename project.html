@@ -8,13 +8,18 @@
     body { margin:0; font-family:'Segoe UI','Pretendard',sans-serif; background:#f5f7fa; color:#222; }
     header { background:#0b2a4a; color:#fff; padding:20px 40px; display:flex; justify-content:space-between; align-items:center; }
     header h1 { margin:0; font-size:22px; }
-    nav a { color:#fff; margin-left:20px; text-decoration:none; font-size:14px; }
-    nav a.active {
-  color:#ffffff;        /* 현재 페이지 → 흰색 */
-  font-weight:700;
-  border-bottom:2px solid #ffffff;
-  padding-bottom:4px;
+   nav a {
+  color:#fff;
+  margin-left:20px;
+  text-decoration:none;
+  font-size:14px;
+  padding-bottom:6px;
 }
+
+nav a.active {
+  border-bottom:3px solid #ffffff;  /* 현재 페이지 밑줄 */
+}
+
     .banner { background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)), url('project.jpg'); background-size:cover; padding:100px 40px; color:#fff; }
     .banner h2 { font-size:40px; margin:0; }
     .section { padding:80px 40px; background:#fff; }
@@ -32,13 +37,14 @@
 <header>
   <h1>조유시스템</h1>
   <nav>
-    <a href="index.html">홈</a>
-    <a href="about.html">회사소개</a>
-    <a href="business.html" class="active">사업분야</a>
-    <a href="tech.html">핵심기술</a>
-    <a href="project.html">주요실적</a>
-    <a href="contact.html">문의</a>
-  </nav>
+  <a href="index.html">홈</a>
+  <a href="about.html">회사소개</a>
+  <a href="business.html">사업분야</a>
+  <a href="tech.html">핵심기술</a>
+  <a href="project.html" class="active">주요실적</a>
+  <a href="contact.html">문의</a>
+</nav>
+
 </header>
 
 

@@ -6,85 +6,102 @@
   <title>조유시스템</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', 'Pretendard', sans-serif;
-      color: #222;
-      background: #f5f7fa;
+      margin:0;
+      font-family:'Segoe UI','Pretendard',sans-serif;
+      background:#f5f7fa;
+      color:#222;
     }
+
+    /* ===== Header ===== */
     header {
-      background: #0b2a4a;
-      color: #fff;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background:#0b2a4a;
+      color:#fff;
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
     header h1 {
-      margin: 0;
-      font-size: 22px;
-      letter-spacing: 1px;
+      margin:0;
+      font-size:22px;
     }
+
     nav a {
-  color:#fff;
-  margin-left:20px;
-  text-decoration:none;
-  font-size:14px;
-  padding-bottom:6px;
-}
-
-nav a.active {
-  border-bottom:3px solid #ffffff;  /* 현재 페이지 밑줄 */
-
-
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+      font-size:14px;
+      padding-bottom:6px;
+      display:inline-block;
     }
+    nav a.active {
+      border-bottom:3px solid #ffffff;
+    }
+
+    /* ===== Hero ===== */
     .hero {
-      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('hero.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 120px 40px;
-      color: #fff;
+      background:linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('hero.jpg');
+      background-size:cover;
+      background-position:center;
+      padding:120px 40px;
+      color:#fff;
     }
     .hero h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
+      font-size:42px;
+      margin:0 0 20px;
     }
     .hero p {
-      font-size: 18px;
-      max-width: 600px;
+      font-size:18px;
+      max-width:600px;
+      line-height:1.7;
     }
-    .section {
-      padding: 80px 40px;
-      
-      margin-bottom: 10px;
-    }
-    .section h3 {
-      font-size: 28px;
-      margin-bottom: 30px;
-      color: #0b2a4a;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-    }
-    .card {
-      background: #f0f3f7;
-      padding: 30px;
-      border-radius: 8px;
-    }
-    footer {
-      background: #111;
-      color: #aaa;
-      padding: 40px;
-      font-size: 14px;
-    }
-    footer strong { color: #fff; }
-    .section-inner {
-  background: #ffffff;
-  padding: 60px;
-  border-radius: 12px;
-}
 
+    /* ===== Section ===== */
+    .section {
+      padding:80px 40px;
+    }
+
+    .section-inner {
+      background:#ffffff;
+      padding:60px;
+      border-radius:12px;
+      max-width:1200px;
+      margin:0 auto;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .section h3 {
+      font-size:28px;
+      margin:0 0 30px;
+      color:#0b2a4a;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+      gap:30px;
+    }
+
+    .card {
+      background:#f0f3f7;
+      padding:30px;
+      border-radius:8px;
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    footer {
+      background:#111;
+      color:#aaa;
+      padding:40px;
+      font-size:14px;
+    }
+    footer strong { color:#fff; }
+
+    @media(max-width:768px){
+      .section { padding:50px 20px; }
+      .section-inner { padding:30px; }
+    }
   </style>
 </head>
 <body>
@@ -101,44 +118,47 @@ nav a.active {
   </nav>
 </header>
 
-
 <section class="hero">
   <h2>Total Automation Solution</h2>
   <p>
-    공장 자동화, 물류 시스템, PLC · HMI 설계 및 전기공사까지
+    공장 자동화, 물류 시스템, PLC · HMI 설계 및 전기공사까지<br>
     조유시스템은 설계부터 시공, 시운전까지 책임지는 기술 파트너입니다.
   </p>
 </section>
 
 <section class="section">
-  <h3>사업분야</h3>
-  <div class="grid">
-    <div class="card">
-      <h4>FA 자동화 제어</h4>
-      <p>자동차 의장 · 차체 · 도장 라인 자동화 제어 설계</p>
-    </div>
-    <div class="card">
-      <h4>PLC / HMI 설계</h4>
-      <p>Siemens, Mitsubishi, LS 기반 제어 프로그램</p>
-    </div>
-    <div class="card">
-      <h4>물류 제어 시스템</h4>
-      <p>자동창고, 자동분류, 배터리 물류 시스템</p>
-    </div>
-    <div class="card">
-      <h4>전기 공사</h4>
-      <p>판넬 제작, 현장 설치, 시운전 및 유지보수</p>
+  <div class="section-inner">
+    <h3>사업분야</h3>
+    <div class="grid">
+      <div class="card">
+        <strong>FA 자동화 제어</strong><br>
+        자동차 의장 · 차체 · 도장 라인 자동화 제어 설계
+      </div>
+      <div class="card">
+        <strong>PLC / HMI 설계</strong><br>
+        Siemens, Mitsubishi, LS 기반 제어 프로그램
+      </div>
+      <div class="card">
+        <strong>물류 제어 시스템</strong><br>
+        자동창고, 자동분류, 배터리 물류 시스템
+      </div>
+      <div class="card">
+        <strong>전기 공사</strong><br>
+        판넬 제작, 현장 설치, 시운전 및 유지보수
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h3>회사 개요</h3>
-  <div class="grid">
-    <div class="card"><strong>회사명</strong><br>㈜ 조유시스템</div>
-    <div class="card"><strong>설립</strong><br>2017년 10월 17일</div>
-    <div class="card"><strong>대표이사</strong><br>조동현</div>
-    <div class="card"><strong>소재지</strong><br>인천광역시 서구 가정로 37번길 37-22</div>
+  <div class="section-inner">
+    <h3>회사 개요</h3>
+    <div class="grid">
+      <div class="card"><strong>회사명</strong><br>㈜ 조유시스템</div>
+      <div class="card"><strong>설립</strong><br>2017년 10월 17일</div>
+      <div class="card"><strong>대표이사</strong><br>조동현</div>
+      <div class="card"><strong>소재지</strong><br>인천광역시 서구 가정로 37번길 37-22</div>
+    </div>
   </div>
 </section>
 
@@ -150,5 +170,3 @@ nav a.active {
 
 </body>
 </html>
-
-<!-- 다음 단계: about.html / business.html 등 추가 예정 -->

@@ -6,48 +6,71 @@
   <title>문의 / 오시는 길 | 조유시스템</title>
   <style>
     body { margin:0; font-family:'Segoe UI','Pretendard',sans-serif; background:#f5f7fa; color:#222; }
+
     header { background:#0b2a4a; color:#fff; padding:20px 40px; display:flex; justify-content:space-between; align-items:center; }
     header h1 { margin:0; font-size:22px; }
-    nav a {
-  color:#fff;
-  margin-left:20px;
-  text-decoration:none;
-  font-size:14px;
-  padding-bottom:6px;
-}
 
-nav a.active {
-  border-bottom:3px solid #ffffff;  /* 현재 페이지 밑줄 */
-}
+    nav a{
+      color:#fff; margin-left:20px; text-decoration:none; font-size:14px;
+      padding-bottom:6px; display:inline-block;
+    }
+    nav a.active{ border-bottom:3px solid #ffffff; }
 
-    .banner { background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)), url('contact.jpg'); background-size:cover; padding:100px 40px; color:#fff; }
-    .banner h2 { font-size:40px; margin:0; }
-    .section { padding:80px 40px;}
-    .section h3 { font-size:30px; margin-bottom:30px; color:#0b2a4a; }
-    .grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
-    .card { background:#f0f3f7; padding:35px; border-radius:10px; }
-    .info p { margin:10px 0; font-size:16px; }
-    .map {
-  width:100%;
-  height:360px;
-  overflow:hidden;
-  border-radius:8px;
-}
+    .banner{
+      background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('contact.jpg');
+      background-size:cover; background-position:center;
+      padding:100px 40px; color:#fff;
+    }
+    .banner h2{ font-size:40px; margin:0; }
 
-    footer { background:#111; color:#aaa; padding:40px; font-size:14px; }
-    footer strong { color:#fff; }
-    @media(max-width:768px){ .grid{ grid-template-columns:1fr; } }
-	  /* 카카오 지도 하단 정보 숨기기 */
-.root_daum_roughmap .wrap_controllers,
-.root_daum_roughmap .wrap_info {
-  display: none !important;
-}
-.section-inner {
-  background: #ffffff;
-  padding: 60px;
-  border-radius: 12px;
-}
+    .section{ padding:80px 40px; }
 
+    .section-inner{
+      background:#ffffff;
+      padding:60px;
+      border-radius:12px;
+      max-width:1200px;
+      margin:0 auto;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .section h3{ font-size:28px; margin:0 0 30px; color:#0b2a4a; }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+    }
+
+    .info p{
+      margin:10px 0;
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .map{
+      width:100%;
+      height:360px;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    /* 카카오 지도 하단 정보 숨김 */
+    .root_daum_roughmap .wrap_controllers,
+    .root_daum_roughmap .wrap_info{
+      display:none !important;
+    }
+
+    footer{ background:#111; color:#aaa; padding:40px; font-size:14px; }
+    footer strong{ color:#fff; }
+
+    @media(max-width:900px){
+      .grid{ grid-template-columns:1fr; }
+    }
+    @media(max-width:768px){
+      .section{ padding:50px 20px; }
+      .section-inner{ padding:30px; }
+    }
   </style>
 </head>
 <body>
@@ -64,50 +87,47 @@ nav a.active {
   </nav>
 </header>
 
-
 <section class="banner">
   <h2>문의 / 오시는 길</h2>
 </section>
 
 <section class="section">
-  <div class="grid">
+  <div class="section-inner">
+    <div class="grid">
 
-    <div class="card info">
-      <h3>연락처 안내</h3>
-      <p><strong>회사명</strong> : ㈜ 조유시스템</p>
-      <p><strong>주소</strong> : 인천광역시 서구 가정로 37번길 37-22</p>
-      <p><strong>전화</strong> : 032-471-1101</p>
-      <p><strong>팩스</strong> : 032-462-1102</p>
-      <p><strong>이메일</strong> : joyou@joyou.co.kr</p>
-    </div>
-
-    <div class="card">
-      <h3>오시는 길</h3>
-      <div class="map">
-        <!-- * 카카오맵 - 지도퍼가기 -->
-<!-- 1. 지도 노드 -->
-<div id="daumRoughmapContainer1768199535933" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-
-<!--
-	2. 설치 스크립트
-	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
--->
-<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-
-<!-- 3. 실행 스크립트 -->
-<script charset="UTF-8">
-	new daum.roughmap.Lander({
-		"timestamp" : "1768199535933",
-		"key" : "fhjuh7fpdij",
-		"mapWidth" : "640",
-		"mapHeight" : "360"
-	}).render();
-</script>
+      <!-- 연락처 -->
+      <div class="info">
+        <h3>연락처 안내</h3>
+        <p><strong>회사명</strong> : ㈜ 조유시스템</p>
+        <p><strong>주소</strong> : 인천광역시 서구 가정로 37번길 37-22</p>
+        <p><strong>전화</strong> : 032-471-1101</p>
+        <p><strong>팩스</strong> : 032-462-1102</p>
+        <p><strong>이메일</strong> : joyou@joyou.co.kr</p>
       </div>
-    </div>
 
+      <!-- 지도 -->
+      <div>
+        <h3>오시는 길</h3>
+        <div class="map">
+          <div id="daumRoughmapContainer1768199535933"
+               class="root_daum_roughmap root_daum_roughmap_landing"></div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
+
+<!-- 카카오 지도 스크립트 -->
+<script charset="UTF-8" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+<script charset="UTF-8">
+  new daum.roughmap.Lander({
+    "timestamp" : "1768199535933",
+    "key" : "fhjuh7fpdij",
+    "mapWidth" : "640",
+    "mapHeight" : "360"
+  }).render();
+</script>
 
 <footer>
   <strong>㈜ 조유시스템</strong><br>

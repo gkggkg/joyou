@@ -31,17 +31,20 @@ header h1 {
 ine-height:1;         
 }
 
-   nav a {
-  color:#fff;
+   nav a,
+nav a:visited {
+  color:#fff;                 /* 방문해도 흰색 유지 */
   margin-left:20px;
   text-decoration:none;
   font-size:14px;
   padding-bottom:6px;
+  display:inline-block;
 }
 
 nav a.active {
-  border-bottom:3px solid #ffffff;  /* 현재 페이지 밑줄 */
+  border-bottom:3px solid #ffffff; /* 현재 페이지 밑줄 */
 }
+
 
     .banner {
   background: linear-gradient(

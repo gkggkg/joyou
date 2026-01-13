@@ -8,56 +8,55 @@
     body { margin:0; font-family:'Segoe UI','Pretendard',sans-serif; background:#f5f7fa; color:#222; }
 
     header {
-  background: #0b2a4a;
-  color: #fff;
-  padding: 0 40px;              /* 좌우만 패딩 */
-  height: 64px;                 /* ← 모든 페이지 동일 */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-}
+      background: #0b2a4a;
+      color: #fff;
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+    }
 
-header h1 {
-  margin: 0;
-  font-size: 22px;
-  line-height: 1;
-}
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1;
+    }
 
-nav {
-  display: flex;
-  align-items: center;
-}
+    nav {
+      display: flex;
+      align-items: center;
+    }
 
-nav a,
-nav a:visited {
-  color: #fff;
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 14px;
-  padding-bottom: 6px;
-  display: inline-block;
-}
+    nav a,
+    nav a:visited {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 14px;
+      padding-bottom: 6px;
+      display: inline-block;
+    }
 
-nav a.active {
-  border-bottom: 3px solid #ffffff;
-}
-
+    nav a.active {
+      border-bottom: 3px solid #ffffff;
+    }
 
     .banner {
-  background: linear-gradient(
-    rgba(11,42,74,0.95),
-    rgba(11,42,74,0.85)
-  );
-  padding: 100px 40px;
-  color: #fff;
-}
+      background: linear-gradient(
+        rgba(11,42,74,0.95),
+        rgba(11,42,74,0.85)
+      );
+      padding: 100px 40px;
+      color: #fff;
+    }
 
-    .banner h2{ font-size:40px; margin:0; }
+    .banner h2 { font-size:40px; margin:0; }
 
-    .section{ padding:80px 40px; }
+    .section { padding:80px 40px; }
 
-    .section-inner{
+    .section-inner {
       background:#ffffff;
       padding:60px;
       border-radius:12px;
@@ -66,21 +65,25 @@ nav a.active {
       box-shadow:0 10px 30px rgba(0,0,0,0.08);
     }
 
-    .section h3{ font-size:28px; margin:0 0 30px; color:#0b2a4a; }
+    .section h3 {
+      font-size:28px;
+      margin:0 0 30px;
+      color:#0b2a4a;
+    }
 
-    .table-wrap{
+    .table-wrap {
       overflow-x:auto;
       border-radius:10px;
     }
 
-    table{
+    table {
       width:100%;
       border-collapse:collapse;
       min-width:700px;
       background:#fff;
     }
 
-    th, td{
+    th, td {
       padding:16px;
       border-bottom:1px solid #e7eaf0;
       text-align:left;
@@ -89,17 +92,22 @@ nav a.active {
       vertical-align:top;
     }
 
-    th{
+    th {
       background:#f0f3f7;
       color:#0b2a4a;
       font-weight:700;
       white-space:nowrap;
     }
 
-    tr:hover{ background:#fafbfe; }
+    tr:hover { background:#fafbfe; }
 
-    footer{ background:#111; color:#aaa; padding:40px; font-size:14px; }
-    footer strong{ color:#fff; }
+    footer {
+      background:#111;
+      color:#aaa;
+      padding:40px;
+      font-size:14px;
+    }
+    footer strong { color:#fff; }
 
     @media(max-width:768px){
       .section{ padding:50px 20px; }
@@ -133,36 +141,57 @@ nav a.active {
       <table>
         <thead>
           <tr>
-            <th style="width:100px;">연도</th>
             <th style="width:260px;">고객사</th>
             <th>프로젝트 내용</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>2025</td>
-            <td>현대자동차 울산공장</td>
-            <td>자동화 라인 전기·제어 설계 및 시운전</td>
+            <td>㈜테라</td>
+            <td>테라 세미콘 7L-6GP 1007 Local 공사</td>
           </tr>
           <tr>
-            <td>2025</td>
-            <td>현대모비스</td>
-            <td>물류 자동화 설비 제어 시스템 구축</td>
+            <td>㈜아이씨디</td>
+            <td>ICD T-Project (HE 1800) 1743 Local 공사</td>
           </tr>
           <tr>
-            <td>2024</td>
-            <td>모트라스</td>
-            <td>생산라인 전기 공사 및 제어 개조</td>
+            <td>㈜케이씨텍</td>
+            <td>CMP (Chemical Mechanical Polishing) 설비 제작</td>
           </tr>
           <tr>
-            <td>2023</td>
-            <td>협력 자동화 업체</td>
-            <td>PLC 프로그램 개발 및 HMI 화면 구성</td>
+            <td>㈜북두엔지니어링</td>
+            <td>Calliper Ass’y Line 판넬 제작 및 Local 공사</td>
           </tr>
           <tr>
-            <td>2022</td>
-            <td>자동차 부품사</td>
-            <td>설비 제어 시스템 개선 및 유지보수</td>
+            <td>관공서·물류</td>
+            <td>안성 쿠팡, 이천 물류센터, 일산 쿠팡, 대전 우편물류집중국 공사</td>
+          </tr>
+          <tr>
+            <td>LG 디스플레이</td>
+            <td>레이저 컷팅기, 솔더링 머신, 실링기, 리페어 장비 판넬 제작 및 현장 설치</td>
+          </tr>
+          <tr>
+            <td>LG에너지솔루션 (시너스텍)</td>
+            <td>HLI 그린파워 1공장 연결 물류(13라인) 설치 및 제어(시운전)</td>
+          </tr>
+          <tr>
+            <td>현대·기아·르노삼성·포드</td>
+            <td>울산·화성 현대자동차 의장 및 차체 도장 라인 현장 설치</td>
+          </tr>
+          <tr>
+            <td>㈜로템</td>
+            <td>
+              미국, 브라질, 멕시코, 중국, 인도, 터키, 체코, 슬로바키아<br>
+              현대·기아 의장·차체·도장·모비스·엔진 라인 신공장 설치
+            </td>
+          </tr>
+          <tr>
+            <td>㈜EQ CELL</td>
+            <td>기아자동차 화성 TK 메인라인 설치</td>
+          </tr>
+          <tr>
+            <td>㈜로템</td>
+            <td>울산 EV 차체 라인 오버헤드 및 울산 현대 모트라스 조립·출하 라인</td>
           </tr>
         </tbody>
       </table>

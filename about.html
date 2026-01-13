@@ -117,6 +117,34 @@ nav a.active {
       .section-inner{ padding:30px; }
       header{ padding:0 20px; }
     }
+    /* ===== 자격증 획득 현황 ===== */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.cert-card {
+  background: #f0f3f7;
+  padding: 24px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.cert-card img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.cert-card p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0b2a4a;
+}
+
   </style>
 </head>
 <body>
@@ -224,6 +252,30 @@ nav a.active {
     </div>
   </div>
 </section>
+  <section class="section">
+  <div class="section-inner">
+    <h3>자격증 획득 현황</h3>
+
+    <div class="cert-grid">
+      <div class="cert-card">
+        <img src="img/cert_iso9001.png" alt="ISO 9001 인증서">
+        <p>ISO 9001 품질경영시스템 인증</p>
+      </div>
+
+      <div class="cert-card">
+        <img src="img/cert_electric.png" alt="전기공사업 등록증">
+        <p>전기공사업 등록증</p>
+      </div>
+
+      <div class="cert-card">
+        <img src="img/cert_rnd.png" alt="연구개발전담부서 인정서">
+        <p>연구개발전담부서 인정</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <footer>
   <strong>㈜ 조유시스템</strong><br>

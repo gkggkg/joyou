@@ -12,31 +12,42 @@
       color:#222;
     }
 
-    /* ===== Header ===== */
     header {
-      background:#0b2a4a;
-      color:#fff;
-      padding:20px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    header h1 {
-      margin:0;
-      font-size:22px;
-    }
+  background: #0b2a4a;
+  color: #fff;
+  padding: 0 40px;              /* 좌우만 패딩 */
+  height: 64px;                 /* ← 모든 페이지 동일 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
 
-    nav a {
-      color:#fff;
-      margin-left:20px;
-      text-decoration:none;
-      font-size:14px;
-      padding-bottom:6px;
-      display:inline-block;
-    }
-    nav a.active {
-      border-bottom:3px solid #ffffff;
-    }
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a,
+nav a:visited {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  padding-bottom: 6px;
+  display: inline-block;
+}
+
+nav a.active {
+  border-bottom: 3px solid #ffffff;
+}
+
 
     /* ===== Hero ===== */
     .hero {

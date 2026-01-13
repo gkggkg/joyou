@@ -161,6 +161,29 @@ nav a.active {
   font-size: 15px;
   line-height: 1.7;
 }
+.philosophy-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.philosophy-icon {
+  width: 64px;      /* 아이콘 크게 */
+  height: 64px;
+  flex-shrink: 0;   /* 줄어들지 않게 */
+}
+
+.philosophy-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b2a4a;
+  margin-bottom: 8px;
+}
+
+.philosophy-text {
+  font-size: 15px;
+  line-height: 1.7;
+}
 
 
   </style>
@@ -189,36 +212,43 @@ nav a.active {
 
     <div class="grid">
 
-      <div class="card">
+      <div class="card philosophy-card">
         <img src="img/icon_responsibility.png" alt="Responsibility" class="philosophy-icon">
-        <div class="philosophy-title">Responsibility</div>
-        <div class="philosophy-text">
-          책임을 핵심 가치로 인식하여<br>
-          고객분들의 지속 가능한 발전을 위해 노력하겠습니다.
+        <div>
+          <div class="philosophy-title">Responsibility</div>
+          <div class="philosophy-text">
+            책임을 핵심 가치로 인식하여<br>
+            고객분들의 지속 가능한 발전을 위해 노력하겠습니다.
+          </div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card philosophy-card">
         <img src="img/icon_trust.png" alt="Trust" class="philosophy-icon">
-        <div class="philosophy-title">Trust</div>
-        <div class="philosophy-text">
-          정직과 성실한 자세로<br>
-          고객과의 신뢰를 가장 최우선으로 생각하는 기업이 되겠습니다.
+        <div>
+          <div class="philosophy-title">Trust</div>
+          <div class="philosophy-text">
+            정직과 성실한 자세로<br>
+            고객과의 신뢰를 가장 최우선으로 생각하는 기업이 되겠습니다.
+          </div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card philosophy-card">
         <img src="img/icon_innovation.png" alt="Innovation" class="philosophy-icon">
-        <div class="philosophy-title">Innovation</div>
-        <div class="philosophy-text">
-          개혁과 변화를 통해 새로운 기술을 창조하며<br>
-          경쟁력 향상을 위해 외부 변화에 신속히 대응하겠습니다.
+        <div>
+          <div class="philosophy-title">Innovation</div>
+          <div class="philosophy-text">
+            개혁과 변화를 통해 새로운 기술을 창조하며<br>
+            경쟁력 향상을 위해 외부 변화에 신속히 대응하겠습니다.
+          </div>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
 
 
 <section class="section">

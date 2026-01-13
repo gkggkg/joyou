@@ -113,6 +113,25 @@
       .section{ padding:50px 20px; }
       .section-inner{ padding:30px; }
     }
+    /* 테이블 내부 스크롤 (5개 행 정도 보이게) */
+.table-scroll thead,
+.table-scroll tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table-scroll tbody {
+  display: block;
+  max-height: 320px;   /* ← 약 5개 행 높이 */
+  overflow-y: auto;
+}
+
+.table-scroll thead {
+  display: table;
+  width: calc(100% - 8px); /* 스크롤바 보정 */
+}
+
   </style>
 </head>
 <body>
@@ -138,7 +157,7 @@
     <h3>프로젝트 수행 실적</h3>
 
     <div class="table-wrap">
-      <table>
+      <table class="table-scroll">
         <thead>
           <tr>
             <th style="width:260px;">고객사</th>

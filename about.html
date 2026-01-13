@@ -12,36 +12,42 @@
       background:#f5f7fa;
     }
 
-    /* ===== HEADER (다른 페이지와 통일) ===== */
-   header {
-  background:#0b2a4a;
-  color:#fff;
-  padding:20px 40px;   /* 다른 페이지와 동일 */
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+    header {
+  background: #0b2a4a;
+  color: #fff;
+  padding: 0 40px;              /* 좌우만 패딩 */
+  height: 64px;                 /* ← 모든 페이지 동일 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-    header h1{
-      margin:0;
-      font-size:22px;
-      line-height:1;
-    }
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1;
+}
 
-    nav a,
-    nav a:visited{
-      color:#fff;
-      margin-left:20px;
-      text-decoration:none;
-      font-size:14px;
-      padding-bottom:6px;
-      display:inline-block;
-    }
-    nav a.active{
-      border-bottom:3px solid #ffffff;
-    }
+nav {
+  display: flex;
+  align-items: center;
+}
 
-    /* ===== BANNER (통일) ===== */
+nav a,
+nav a:visited {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  padding-bottom: 6px;
+  display: inline-block;
+}
+
+nav a.active {
+  border-bottom: 3px solid #ffffff;
+}
+
   .banner {
   background: linear-gradient(
     rgba(11,42,74,0.95),

@@ -4,88 +4,138 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>핵심기술 | 조유시스템</title>
+
   <style>
-    body { margin:0; font-family:'Segoe UI','Pretendard',sans-serif; background:#f5f7fa; color:#222; }
-
-    header {
-  background: #0b2a4a;
-  color: #fff;
-  padding: 0 40px;              /* 좌우만 패딩 */
-  height: 64px;                 /* ← 모든 페이지 동일 */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 22px;
-  line-height: 1;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-}
-
-nav a,
-nav a:visited {
-  color: #fff;
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 14px;
-  padding-bottom: 6px;
-  display: inline-block;
-}
-
-nav a.active {
-  border-bottom: 3px solid #ffffff;
-}
-
-
-    .banner {
-  background: linear-gradient(
-    rgba(11,42,74,0.95),
-    rgba(11,42,74,0.85)
-  );
-  padding: 100px 40px;
-  color: #fff;
-}
-
-    .banner h2{ font-size:40px; margin:0; }
-
-    .section{ padding:80px 40px; }
-
-    /* about / business 와 동일한 흰 박스 */
-    .section-inner{
-      background:#ffffff;
-      padding:60px;
-      border-radius:12px;
-      max-width:1200px;
-      margin:0 auto;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', 'Pretendard', sans-serif;
+      background: #f5f7fa;
+      color: #222;
     }
 
-    .section h3{ font-size:28px; margin:0 0 30px; color:#0b2a4a; }
+    /* ===== HEADER ===== */
+    header {
+      background: #0b2a4a;
+      color: #fff;
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+    }
 
-    .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:30px; }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1;
+    }
 
-    .card{ background:#f0f3f7; padding:30px; border-radius:10px; }
-    .card h4{ margin:0 0 12px; font-size:20px; color:#0b2a4a; }
-    .card ul{ margin:0; padding-left:18px; line-height:1.7; font-size:15px; }
+    nav {
+      display: flex;
+      align-items: center;
+    }
 
-    footer{ background:#111; color:#aaa; padding:40px; font-size:14px; }
-    footer strong{ color:#fff; }
+    nav a,
+    nav a:visited {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 14px;
+      padding-bottom: 6px;
+      display: inline-block;
+    }
 
-    @media(max-width:768px){
-      .section{ padding:50px 20px; }
-      .section-inner{ padding:30px; }
+    nav a.active {
+      border-bottom: 3px solid #ffffff;
+    }
+
+    /* ===== BANNER ===== */
+    .banner {
+      background: linear-gradient(
+        rgba(11,42,74,0.95),
+        rgba(11,42,74,0.85)
+      );
+      padding: 100px 40px;
+      color: #fff;
+    }
+
+    .banner h2 {
+      font-size: 40px;
+      margin: 0;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      padding: 80px 40px;
+    }
+
+    .section-inner {
+      background: #ffffff;
+      padding: 60px;
+      border-radius: 12px;
+      max-width: 1200px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .section h3 {
+      font-size: 28px;
+      margin: 0 0 30px;
+      color: #0b2a4a;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #f0f3f7;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .card h4 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      color: #0b2a4a;
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 40px;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 50px 20px;
+      }
+      .section-inner {
+        padding: 30px;
+      }
     }
   </style>
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
   <h1>조유시스템</h1>
   <nav>
@@ -98,16 +148,17 @@ nav a.active {
   </nav>
 </header>
 
+<!-- BANNER -->
 <section class="banner">
   <h2>핵심기술</h2>
 </section>
 
+<!-- PROCESS 기술 -->
 <section class="section">
   <div class="section-inner">
     <h3>Process 기술</h3>
 
     <div class="grid">
-      <!-- 카드 1 -->
       <div class="card">
         <h4>자동차 공정 자동화</h4>
         <ul>
@@ -117,7 +168,6 @@ nav a.active {
         </ul>
       </div>
 
-      <!-- 카드 2 -->
       <div class="card">
         <h4>물류 · 저장 시스템</h4>
         <ul>
@@ -128,7 +178,6 @@ nav a.active {
         </ul>
       </div>
 
-      <!-- 카드 3 (신규 추가) -->
       <div class="card">
         <h4>설계 Tools</h4>
         <ul>
@@ -137,15 +186,15 @@ nav a.active {
         </ul>
       </div>
     </div>
-
   </div>
 </section>
-  <section class="section">
+
+<!-- PRODUCT 기술 -->
+<section class="section">
   <div class="section-inner">
     <h3>Product 기술</h3>
 
     <div class="grid">
-      <!-- 카드 1 -->
       <div class="card">
         <h4>제어 Panel</h4>
         <ul>
@@ -156,7 +205,6 @@ nav a.active {
         </ul>
       </div>
 
-      <!-- 카드 2 -->
       <div class="card">
         <h4>전력 · 제어 시스템</h4>
         <ul>
@@ -166,9 +214,8 @@ nav a.active {
         </ul>
       </div>
 
-      <!-- 카드 3 (신규 추가) -->
       <div class="card">
-        <h4>NET WORK 기술</h4>
+        <h4>NETWORK 기술</h4>
         <ul>
           <li>물류센터 System</li>
           <li>자동창고 System</li>
@@ -176,12 +223,10 @@ nav a.active {
         </ul>
       </div>
     </div>
-
   </div>
 </section>
 
-
-
+<!-- FOOTER -->
 <footer>
   <strong>㈜ 조유시스템</strong><br>
   인천광역시 서구 가정로 37번길 37-22<br>

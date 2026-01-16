@@ -45,7 +45,7 @@
 
     nav a.active{ border-bottom:3px solid #fff; }
 
-    /* ===== Banner (남색 제거 버전) ===== */
+    /* ===== Banner ===== */
     .banner{
       background:
         linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
@@ -122,7 +122,6 @@
       gap:22px;
     }
 
-    /* ✨ 새 카드 디자인 */
     .philosophy-item{
       background:#fff;
       border-radius:12px;
@@ -144,29 +143,31 @@
       color:#444;
     }
 
-    /* ===== 인사말 ===== */
+    /* ===== 인사말 (고급화) ===== */
     .greeting{
-      background:#f0f3f7;
+      background:#fff;
       border-radius:14px;
-      padding:32px;
+      padding:40px 42px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.08);
+      border-left:5px solid #0b2a4a;
     }
 
-    .greeting-quote{
-      background:#fff;
-      border-left:5px solid #0b2a4a;
-      border-radius:10px;
-      padding:20px;
-      font-size:16px;
-      line-height:1.8;
+    .greeting-head{
+      font-size:20px;
+      font-weight:700;
       color:#0b2a4a;
-      margin-bottom:22px;
+      line-height:1.6;
+      margin-bottom:26px;
     }
 
     .greeting-body p{
-      margin:0 0 14px;
+      margin:0 0 16px;
       font-size:15px;
-      line-height:1.8;
+      line-height:1.9;
+      color:#444;
     }
+
+    .greeting-body p:last-child{ margin-bottom:0; }
 
     /* ===== 연혁 ===== */
     .timeline{
@@ -323,7 +324,7 @@
     <h3>인사말</h3>
 
     <div class="greeting">
-      <div class="greeting-quote">
+      <div class="greeting-head">
         조유시스템은 고객의 현장을 깊이 이해하고,<br>
         기술의 완성도로 신뢰에 보답하는 기업을 지향합니다.
       </div>
@@ -350,7 +351,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- 연혁 -->
 <section class="section">

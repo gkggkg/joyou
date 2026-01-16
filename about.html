@@ -32,7 +32,6 @@
     }
 
     header h1{ margin:0; font-size:22px; }
-
     nav{ display:flex; align-items:center; }
 
     nav a{
@@ -42,7 +41,6 @@
       font-size:14px;
       padding-bottom:6px;
     }
-
     nav a.active{ border-bottom:3px solid #fff; }
 
     /* ===== Banner ===== */
@@ -101,28 +99,7 @@
       border-radius:2px;
     }
 
-    /* ===== 경영 이념 ===== */
-    .philosophy-layout{
-      display:grid;
-      grid-template-columns:1fr 1.2fr;
-      gap:60px;
-      align-items:center;
-    }
-
-    .philosophy-image img{
-      width:100%;
-      max-height:420px;
-      object-fit:cover;
-      border-radius:14px;
-    }
-
-    .philosophy-list{
-      display:flex;
-      flex-direction:column;
-      gap:22px;
-    }
-
-    /* 공통 카드(경영이념 느낌) */
+    /* ===== 공통 카드(경영이념 느낌) ===== */
     .info-card{
       background:#fff;
       border-radius:12px;
@@ -144,23 +121,73 @@
       color:#444;
     }
 
-    /* ===== 인사말 (경영이념 카드 톤으로 통일) ===== */
-    .greeting-stack{
+    /* ===== 경영 이념 ===== */
+    .philosophy-layout{
+      display:grid;
+      grid-template-columns:1fr 1.2fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .philosophy-image img{
+      width:100%;
+      max-height:420px;
+      object-fit:cover;
+      border-radius:14px;
+    }
+
+    .philosophy-list{
       display:flex;
       flex-direction:column;
-      gap:18px;
+      gap:22px;
     }
 
-    .greeting-title{
-      font-size:18px;
+    /* ===== 인사말 (한 카드 + 부제목 + 서명 라인) ===== */
+    .greeting-card{
+      padding:34px 34px;
+    }
+
+    .greeting-subtitle{
+      font-size:16px;
       font-weight:800;
+      letter-spacing:-0.2px;
       color:#0b2a4a;
+      margin:0 0 14px;
       line-height:1.6;
-      margin:0;
     }
 
-    .greeting-title strong{
-      font-weight:900;
+    .greeting-body{
+      margin:0;
+      font-size:15px;
+      line-height:1.95;
+      color:#333;
+    }
+
+    .greeting-body .gap{
+      display:block;
+      height:12px;
+    }
+
+    .greeting-sign{
+      margin-top:22px;
+      padding-top:16px;
+      border-top:1px solid rgba(11,42,74,0.14);
+      display:flex;
+      justify-content:flex-end;
+      align-items:baseline;
+      gap:10px;
+      color:#0b2a4a;
+    }
+
+    .greeting-sign .label{
+      font-size:13px;
+      color:rgba(11,42,74,0.7);
+    }
+
+    .greeting-sign .name{
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:-0.1px;
     }
 
     /* ===== 연혁 (타임라인) ===== */
@@ -212,41 +239,48 @@
       color:#333;
     }
 
-    /* ===== 자격증 ===== */
+    /* ===== 자격증 (남색 느낌 제거/깔끔하게) ===== */
     .cert-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
       gap:30px;
     }
 
+    /* ✅ 남색/카드 느낌 최소화: 흰 바탕 + 얇은 테두리 */
     .cert-card{
-      background:#f0f3f7;
-      padding:24px;
+      background:#fff;
+      border:1px solid #e8ecf3;
       border-radius:14px;
+      padding:18px;
       text-align:center;
-      transition:.15s;
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
     }
 
     .cert-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 10px 24px rgba(0,0,0,0.12);
+      transform:translateY(-3px);
+      box-shadow:0 12px 28px rgba(0,0,0,0.10);
+      border-color:#d9e1ef;
     }
 
+    /* ✅ 이미지 주변 남색/배경 제거: 투명 + 깔끔 */
     .cert-card img{
       width:100%;
-      max-height:360px;
+      max-height:320px;
       object-fit:contain;
-      background:#fff;
+      background:transparent;
       border-radius:10px;
-      padding:12px;
-      margin-bottom:16px;
+      padding:0;
+      margin:6px 0 14px;
+      display:block;
     }
 
+    /* ✅ 텍스트도 남색 약하게 */
     .cert-card p{
       margin:0;
-      font-size:15px;
-      font-weight:600;
-      color:#0b2a4a;
+      font-size:14px;
+      font-weight:700;
+      color:#24384d;
+      line-height:1.5;
     }
 
     /* ===== Footer ===== */
@@ -276,6 +310,7 @@
       .section-inner{ padding:30px; }
       .banner{ min-height:45vh; padding:0 20px; }
       .banner h2{ font-size:32px; }
+      .greeting-card{ padding:26px 24px; }
     }
   </style>
 </head>
@@ -328,39 +363,32 @@
   </div>
 </section>
 
-<!-- 인사말 (경영이념 카드 느낌으로 통일 / 이미지 없음) -->
+<!-- 인사말 (한 카드 + 부제목 + 대표이사 서명 라인) -->
 <section class="section">
   <div class="section-inner">
     <h3>인사말</h3>
 
-    <div class="greeting-stack">
-      <div class="info-card">
-        <p class="greeting-title">
-          고객의 현장을 이해하는 기술력,<br>
-          신뢰로 답하는 <strong>조유시스템</strong>
-        </p>
-      </div>
+    <div class="info-card greeting-card">
+      <p class="greeting-subtitle">
+        고객의 현장을 이해하는 기술력,<br>
+        신뢰로 답하는 조유시스템
+      </p>
 
-      <div class="info-card">
-        <p>
-          조유시스템은 다년간 축적된 현장 경험과 기술 노하우를 바탕으로
-          설계부터 시공, 시운전, 유지보수까지 전 과정에서
-          안정성과 완성도를 최우선으로 생각합니다.
-        </p>
-      </div>
+      <p class="greeting-body">
+        조유시스템은 다년간 축적된 현장 경험과 기술 노하우를 바탕으로
+        설계부터 시공, 시운전, 유지보수까지 전 과정에서
+        안정성과 완성도를 최우선으로 생각합니다.
+        <span class="gap"></span>
+        단순한 설비 구축을 넘어 고객의 공정이 안정적으로 운영될 수 있도록
+        책임 있는 기술 지원과 장기적인 파트너십을 제공합니다.
+        <span class="gap"></span>
+        앞으로도 기본에 충실한 기술력과 성실한 자세로
+        신뢰받는 파트너가 되기 위해 끊임없이 노력하겠습니다.
+      </p>
 
-      <div class="info-card">
-        <p>
-          단순한 설비 구축을 넘어 고객의 공정이 안정적으로 운영될 수 있도록
-          책임 있는 기술 지원과 장기적인 파트너십을 제공합니다.
-        </p>
-      </div>
-
-      <div class="info-card">
-        <p>
-          앞으로도 기본에 충실한 기술력과 성실한 자세로
-          신뢰받는 파트너가 되기 위해 끊임없이 노력하겠습니다.
-        </p>
+      <div class="greeting-sign">
+        <span class="label">대표이사</span>
+        <span class="name">조동현</span>
       </div>
     </div>
   </div>
@@ -399,7 +427,7 @@
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">2024년</div>
-        <div class="tl-text">전기공사업 면허 취득 및 평택모비스, 화성기아 TK메인라인, 교육센터 공사 및 시운전</div>
+        <div class="tl-text">전기공사업 면허 취득 및 평택모비스(자동차엔진), 화성기아 TK메인라인, 교육센터(시작실) 공사 및 시운전</div>
       </div>
 
       <div class="tl-item">

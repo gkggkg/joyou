@@ -4,108 +4,191 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>사업분야 | 조유시스템</title>
+
   <style>
-    body { margin:0; font-family:'Segoe UI','Pretendard',sans-serif; background:#f5f7fa; color:#222; }
+    /* ===== 기본 ===== */
+    body{
+      margin:0;
+      font-family:'Segoe UI','Pretendard',sans-serif;
+      color:#222;
+      background:#f5f7fa;
+      padding-top:64px;
+    }
 
-    header {
-  background: #0b2a4a;
-  color: #fff;
-  padding: 0 40px;              /* 좌우만 패딩 */
-  height: 64px;                 /* ← 모든 페이지 동일 */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
+    /* ===== Header ===== */
+    header{
+      background:#0b2a4a;
+      color:#fff;
+      padding:0 40px;
+      height:64px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      z-index:1000;
+      box-sizing:border-box;
+    }
 
-      position: fixed;     /* 🔥 고정 */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
+    header h1{ margin:0; font-size:22px; }
 
-header h1 {
-  margin: 0;
-  font-size: 22px;
-  line-height: 1;
-}
+    nav{ display:flex; align-items:center; }
 
-nav {
-  display: flex;
-  align-items: center;
-}
+    nav a{
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+      font-size:14px;
+      padding-bottom:6px;
+    }
 
-nav a,
-nav a:visited {
-  color: #fff;
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 14px;
-  padding-bottom: 6px;
-  display: inline-block;
-}
+    nav a.active{ border-bottom:3px solid #fff; }
 
-nav a.active {
-  border-bottom: 3px solid #ffffff;
-}
+    /* ===== Banner ===== */
+    .banner{
+      background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url('img/business_banner.jpg');
+      background-size:cover;
+      background-position:center;
+      min-height:65vh;
+      padding:0 40px;
+      color:#fff;
+      display:flex;
+      align-items:center;
+    }
 
+    .banner-inner{
+      max-width:1200px;
+      margin:0 auto;
+      width:100%;
+    }
 
-    /* ===== Banner (business) ===== */
-.banner{
-  background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url('img/business_banner.jpg'); /* ✅ 여기만 네 이미지 파일명으로 변경 */
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  min-height:65vh;                /* 배너 더 크게 */
-  padding:0 40px;
-  color:#fff;
-  display:flex;
-  align-items:center;
-}
+    .banner h2{
+      font-size:44px;
+      margin:0;
+      text-shadow:0 2px 6px rgba(0,0,0,0.4);
+    }
 
-.banner-inner{
-  max-width:1200px;
-  margin:0 auto;
-  width:100%;
-}
+    /* ===== Section ===== */
+    .section{
+      padding:90px 40px;
+    }
 
-.banner h2{
-  font-size:44px;
-  margin:0;
-  text-shadow:0 2px 6px rgba(0,0,0,0.4);
-}
+    .section-inner{
+      max-width:1200px;
+      margin:0 auto;
+    }
 
-/* 모바일 */
-@media(max-width:768px){
-  .banner{
-    min-height:45vh;
-    padding:0 20px;
-  }
-  .banner h2{
-    font-size:32px;
-  }
-}
+    .section h3{
+      font-size:28px;
+      margin:0 0 60px;
+      color:#0b2a4a;
+      position:relative;
+      padding-bottom:14px;
+    }
 
+    .section h3::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:56px;
+      height:3px;
+      background:#0b2a4a;
+    }
 
-    .section h3{ font-size:28px; margin:0 0 30px; color:#0b2a4a; }
+    /* ===== Business Row ===== */
+    .business-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+      margin-bottom:90px;
+    }
 
-    .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:30px; }
+    .business-row.reverse{
+      grid-template-columns:1fr 1fr;
+    }
 
-    .card{ background:#f0f3f7; padding:30px; border-radius:10px; }
-    .card h4{ margin:0 0 12px; font-size:20px; color:#0b2a4a; }
-    .card p{ margin:0; line-height:1.7; font-size:15px; }
+    /* 이미지 */
+    .business-image{
+      overflow:hidden;
+      border-radius:16px;
+    }
 
-    footer{ background:#111; color:#aaa; padding:40px; font-size:14px; }
+    .business-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .6s ease;
+    }
+
+    .business-image:hover img{
+      transform:scale(1.08);
+    }
+
+    /* 텍스트 */
+    .business-content h4{
+      font-size:24px;
+      margin:0 0 18px;
+      color:#0b2a4a;
+    }
+
+    .business-content p{
+      font-size:15px;
+      line-height:1.9;
+      color:#333;
+      margin:0;
+      max-width:520px;
+    }
+
+    /* ===== Reverse ===== */
+    .reverse .business-image{
+      order:2;
+    }
+
+    .reverse .business-content{
+      order:1;
+    }
+
+    /* ===== Footer ===== */
+    footer{
+      background:#111;
+      color:#aaa;
+      padding:40px;
+      font-size:14px;
+    }
+
     footer strong{ color:#fff; }
 
+    /* ===== Responsive ===== */
+    @media(max-width:900px){
+      .business-row{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .reverse .business-image,
+      .reverse .business-content{
+        order:unset;
+      }
+
+      .business-content p{
+        max-width:100%;
+      }
+    }
+
     @media(max-width:768px){
-      .section{ padding:50px 20px; }
-      .section-inner{ padding:30px; }
+      header{ padding:0 20px; }
+      .banner{ min-height:45vh; padding:0 20px; }
+      .banner h2{ font-size:32px; }
+      .section{ padding:60px 20px; }
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -126,86 +209,68 @@ nav a.active {
   </div>
 </section>
 
-
-<!-- ✅ 사업분야(요약) : index에서 가져온 카드 -->
-<section class="section">
-  <div class="section-inner">
-    <h3>사업분야</h3>
-
-    <div class="grid">
-      <div class="card">
-        <h4>FA 자동화 제어</h4>
-        <p>자동차 의장 · 차체 · 도장 라인 자동화 제어 설계</p>
-      </div>
-
-      <div class="card">
-        <h4>PLC / HMI 설계</h4>
-        <p>Siemens, Mitsubishi, LS 기반 제어 프로그램</p>
-      </div>
-
-      <div class="card">
-        <h4>물류 제어 시스템</h4>
-        <p>자동창고, 자동분류, 배터리 물류 시스템</p>
-      </div>
-
-      <div class="card">
-        <h4>전기 공사</h4>
-        <p>판넬 제작, 현장 설치, 시운전 및 유지보수</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ✅ 주요 사업 영역(상세) -->
 <section class="section">
   <div class="section-inner">
     <h3>주요 사업 영역</h3>
 
-    <div class="grid">
-      <div class="card">
-        <h4>자동화 제어 설계</h4>
+    <!-- FA 자동화 제어 -->
+    <div class="business-row">
+      <div class="business-image">
+        <img src="img/business_fa.jpg" alt="FA 자동화 제어">
+      </div>
+      <div class="business-content">
+        <h4>FA 자동화 제어</h4>
         <p>
-          생산 설비 및 공정 자동화를 위한 전기·제어 시스템을 설계합니다.<br>
-          고객 공정에 최적화된 안정적이고 효율적인 제어 솔루션을 제공합니다.
+          자동차 및 산업 설비 공정을 위한 자동화 제어 시스템을 설계·구축합니다.
+          생산 효율과 안정성을 고려한 최적의 제어 솔루션을 제공합니다.
         </p>
       </div>
+    </div>
 
-      <div class="card">
-        <h4>PLC 설계</h4>
+    <!-- PLC / HMI 설계 -->
+    <div class="business-row reverse">
+      <div class="business-image">
+        <img src="img/business_plc.jpg" alt="PLC / HMI 설계">
+      </div>
+      <div class="business-content">
+        <h4>PLC / HMI 설계</h4>
         <p>
-          다양한 산업 현장 경험을 바탕으로 PLC 프로그램을 설계 및 개발합니다.<br>
-          유지보수와 확장성을 고려한 구조로 안정적인 설비 운영을 지원합니다.
+          Siemens, Mitsubishi, LS 등 다양한 PLC 기반의 제어 프로그램과
+          직관적인 HMI 화면을 설계하여 설비 운용 효율을 극대화합니다.
         </p>
       </div>
+    </div>
 
-      <div class="card">
-        <h4>HMI 설계</h4>
+    <!-- 물류 제어 시스템 -->
+    <div class="business-row">
+      <div class="business-image">
+        <img src="img/business_logistics.jpg" alt="물류 제어 시스템">
+      </div>
+      <div class="business-content">
+        <h4>물류 제어 시스템</h4>
         <p>
-          작업자 중심의 직관적인 HMI 화면을 설계합니다.<br>
-          설비 상태 모니터링, 알람 관리, 데이터 시각화를 통해 작업 효율을 향상시킵니다.
+          자동창고, 물류센터, 배터리 물류 시스템 등
+          다양한 물류 환경에 최적화된 제어 및 운영 솔루션을 제공합니다.
         </p>
       </div>
+    </div>
 
-      <div class="card">
+    <!-- 전기 공사 -->
+    <div class="business-row reverse">
+      <div class="business-image">
+        <img src="img/business_electric.jpg" alt="전기 공사">
+      </div>
+      <div class="business-content">
         <h4>전기 공사</h4>
         <p>
-          공장 및 산업 설비 전기 공사를 수행합니다.<br>
-          배전, 배선, 판넬 설치부터 시운전까지 안전하고 체계적으로 진행합니다.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>시운전 및 유지보수</h4>
-        <p>
-          설비 시운전 및 안정화 작업을 지원하며,
-          지속적인 유지보수를 통해 설비 가동률 향상을 도모합니다.
+          판넬 제작부터 현장 설치, 시운전까지
+          산업 설비 전기 공사를 안전하고 체계적으로 수행합니다.
         </p>
       </div>
     </div>
 
   </div>
 </section>
-
 
 <footer>
   <strong>㈜ 조유시스템</strong><br>

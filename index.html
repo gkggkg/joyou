@@ -59,7 +59,7 @@
     }
 
     /* ===== Hero ===== */
-    .hero {
+    .hero{
   background:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
     url('img/hero.jpg');
@@ -67,13 +67,14 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  min-height: 70vh;
+  min-height: calc(100vh - 64px); /* ✅ 헤더 높이만큼 빼고 꽉 */
   padding: 0 40px;
-  color: #fff;
+  color:#fff;
 
-  display: flex;
-  align-items: center;
+  display:flex;
+  align-items:center;
 }
+
 
 .hero-inner {
   max-width: 1200px;
@@ -177,33 +178,7 @@
 
   
 
-  <section class="section">
-    <div class="section-inner">
-      <h3>회사 개요</h3>
-
-      <div class="grid">
-        <div class="card">
-          <strong>회사명</strong><br>
-          ㈜ 조유시스템
-        </div>
-
-        <div class="card">
-          <strong>설립</strong><br>
-          2017년 10월 17일
-        </div>
-
-        <div class="card">
-          <strong>대표이사</strong><br>
-          조동현
-        </div>
-
-        <div class="card">
-          <strong>소재지</strong><br>
-          인천광역시 서구 가정로 37번길 37-22
-        </div>
-      </div>
-    </div>
-  </section>
+ 
 
   <footer>
     <strong>㈜ 조유시스템</strong><br>

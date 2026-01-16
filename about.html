@@ -12,7 +12,7 @@
       font-family:'Segoe UI','Pretendard',sans-serif;
       color:#222;
       background:#f5f7fa;
-      padding-top:64px; /* 고정 헤더 보정 */
+      padding-top:64px;
     }
 
     /* ===== Header ===== */
@@ -31,15 +31,9 @@
       z-index:1000;
     }
 
-    header h1{
-      margin:0;
-      font-size:22px;
-    }
+    header h1{ margin:0; font-size:22px; }
 
-    nav{
-      display:flex;
-      align-items:center;
-    }
+    nav{ display:flex; align-items:center; }
 
     nav a{
       color:#fff;
@@ -49,26 +43,35 @@
       padding-bottom:6px;
     }
 
-    nav a.active{
-      border-bottom:3px solid #fff;
-    }
+    nav a.active{ border-bottom:3px solid #fff; }
 
     /* ===== Banner ===== */
     .banner{
-      background:linear-gradient(rgba(11,42,74,0.95), rgba(11,42,74,0.85));
-      padding:100px 40px;
+      background:
+        linear-gradient(rgba(11,42,74,0.6), rgba(11,42,74,0.6)),
+        url('img/about_banner.jpg');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      min-height:60vh;
+      padding:0 40px;
       color:#fff;
+      display:flex;
+      align-items:center;
+    }
+
+    .banner-inner{
+      max-width:1200px;
+      margin:0 auto;
     }
 
     .banner h2{
-      font-size:40px;
+      font-size:44px;
       margin:0;
     }
 
     /* ===== Section ===== */
-    .section{
-      padding:80px 40px;
-    }
+    .section{ padding:80px 40px; }
 
     .section-inner{
       background:#fff;
@@ -203,7 +206,7 @@
       padding:24px;
       border-radius:10px;
       text-align:center;
-      transition:transform .15s ease, box-shadow .15s ease;
+      transition:.15s;
     }
 
     .cert-card:hover{
@@ -250,6 +253,15 @@
       .section{ padding:50px 20px; }
       .section-inner{ padding:30px; }
       .tl-item{ grid-template-columns:1fr; }
+
+      .banner{
+        min-height:45vh;
+        padding:0 20px;
+      }
+
+      .banner h2{
+        font-size:32px;
+      }
     }
   </style>
 </head>
@@ -269,7 +281,9 @@
 </header>
 
 <section class="banner">
-  <h2>회사소개</h2>
+  <div class="banner-inner">
+    <h2>회사소개</h2>
+  </div>
 </section>
 
 <!-- 경영 이념 -->
@@ -326,30 +340,12 @@
     <h3>연혁</h3>
 
     <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-year">2017</div>
-        <div class="tl-content"><ul><li>㈜ 조유시스템 법인 설립</li></ul></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">2020 ~ 2021</div>
-        <div class="tl-content"><ul><li>공사 수행</li><li>시스템 준비</li></ul></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">2022</div>
-        <div class="tl-content"><ul><li>화성 모트라스 조립·출하라인</li><li>ISO 9001 인증</li></ul></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">2023</div>
-        <div class="tl-content"><ul><li>LG에너지솔루션 물류 공사</li></ul></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">2024</div>
-        <div class="tl-content"><ul><li>전기공사업 면허 취득</li></ul></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">2025</div>
-        <div class="tl-content"><ul><li>울산 현대자동차 라인 공사</li></ul></div>
-      </div>
+      <div class="tl-item"><div class="tl-year">2017</div><div class="tl-content"><ul><li>㈜ 조유시스템 법인 설립</li></ul></div></div>
+      <div class="tl-item"><div class="tl-year">2020~2021</div><div class="tl-content"><ul><li>공사 수행</li><li>시스템 준비</li></ul></div></div>
+      <div class="tl-item"><div class="tl-year">2022</div><div class="tl-content"><ul><li>화성 모트라스 조립·출하라인</li><li>ISO 9001 인증</li></ul></div></div>
+      <div class="tl-item"><div class="tl-year">2023</div><div class="tl-content"><ul><li>LG에너지솔루션 물류 공사</li></ul></div></div>
+      <div class="tl-item"><div class="tl-year">2024</div><div class="tl-content"><ul><li>전기공사업 면허 취득</li></ul></div></div>
+      <div class="tl-item"><div class="tl-year">2025</div><div class="tl-content"><ul><li>울산 현대자동차 라인 공사</li></ul></div></div>
     </div>
   </div>
 </section>

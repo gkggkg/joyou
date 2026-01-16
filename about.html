@@ -4,14 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>회사소개 | 조유시스템</title>
+
   <style>
+    /* ===== 기본 ===== */
     body{
       margin:0;
       font-family:'Segoe UI','Pretendard',sans-serif;
       color:#222;
       background:#f5f7fa;
+      padding-top:64px; /* 고정 헤더 보정 */
     }
 
+    /* ===== Header ===== */
     header{
       background:#0b2a4a;
       color:#fff;
@@ -21,18 +25,15 @@
       justify-content:space-between;
       align-items:center;
       box-sizing:border-box;
-
-      position: fixed;     /* 🔥 고정 */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      z-index:1000;
     }
 
     header h1{
       margin:0;
       font-size:22px;
-      line-height:1;
     }
 
     nav{
@@ -40,22 +41,22 @@
       align-items:center;
     }
 
-    nav a, nav a:visited{
+    nav a{
       color:#fff;
       margin-left:20px;
       text-decoration:none;
       font-size:14px;
       padding-bottom:6px;
-      display:inline-block;
     }
 
     nav a.active{
-      border-bottom:3px solid #ffffff;
+      border-bottom:3px solid #fff;
     }
 
+    /* ===== Banner ===== */
     .banner{
       background:linear-gradient(rgba(11,42,74,0.95), rgba(11,42,74,0.85));
-      padding:100px 40px; /* business랑 동일 */
+      padding:100px 40px;
       color:#fff;
     }
 
@@ -64,13 +65,13 @@
       margin:0;
     }
 
-    /* ===== SECTION ===== */
+    /* ===== Section ===== */
     .section{
       padding:80px 40px;
     }
 
     .section-inner{
-      background:#ffffff;
+      background:#fff;
       padding:60px;
       border-radius:12px;
       max-width:1200px;
@@ -82,47 +83,118 @@
       font-size:28px;
       margin:0 0 30px;
       color:#0b2a4a;
+      position:relative;
+      padding-bottom:14px;
     }
 
-    .grid{
+    .section h3::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:56px;
+      height:3px;
+      background:#0b2a4a;
+      border-radius:2px;
+    }
+
+    /* ===== 경영 이념 ===== */
+    .philosophy-layout{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
-      gap:30px;
+      grid-template-columns:1fr 1.2fr;
+      gap:60px;
+      align-items:center;
     }
 
-    .card{
+    .philosophy-image img{
+      width:100%;
+      max-height:420px;
+      object-fit:cover;
+      border-radius:12px;
+      display:block;
+    }
+
+    .philosophy-list{
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+    }
+
+    .philosophy-item{
       background:#f0f3f7;
-      padding:30px;
-      border-radius:8px;
+      border-radius:10px;
+      padding:22px 24px;
+    }
+
+    .philosophy-item h4{
+      margin:0 0 8px;
+      font-size:20px;
+      color:#0b2a4a;
+    }
+
+    .philosophy-item p{
+      margin:0;
       font-size:15px;
       line-height:1.7;
     }
 
-    .card ul{
-      margin:12px 0 0;
+    /* ===== 인사말 ===== */
+    .greeting{
+      background:#f0f3f7;
+      border-radius:12px;
+      padding:28px;
+    }
+
+    .greeting-quote{
+      background:#fff;
+      border-left:5px solid #0b2a4a;
+      border-radius:10px;
+      padding:18px;
+      font-size:16px;
+      line-height:1.7;
+      color:#0b2a4a;
+      margin-bottom:18px;
+    }
+
+    .greeting-body p{
+      margin:0 0 14px;
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    /* ===== 연혁 ===== */
+    .timeline{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .tl-item{
+      display:grid;
+      grid-template-columns:160px 1fr;
+      gap:18px;
+      background:#f0f3f7;
+      border-radius:12px;
+      padding:18px;
+    }
+
+    .tl-year{
+      font-weight:800;
+      color:#0b2a4a;
+      font-size:16px;
+    }
+
+    .tl-content ul{
+      margin:0;
       padding-left:18px;
       font-size:15px;
-      line-height:1.7;
+      line-height:1.8;
     }
 
-    footer{
-      background:#111;
-      color:#aaa;
-      padding:40px;
-      font-size:14px;
-    }
-    footer strong{ color:#fff; }
-
-    @media(max-width:768px){
-      .section{ padding:50px 20px; }
-      .section-inner{ padding:30px; }
-      header{ padding:0 20px; }
-    }
-
-    /* ===== 자격증 획득 현황 ===== */
+    /* ===== 자격증 ===== */
     .cert-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
       gap:30px;
     }
 
@@ -131,12 +203,21 @@
       padding:24px;
       border-radius:10px;
       text-align:center;
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+
+    .cert-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 22px rgba(0,0,0,0.1);
     }
 
     .cert-card img{
       width:100%;
       max-height:360px;
       object-fit:contain;
+      background:#fff;
+      border-radius:8px;
+      padding:10px;
       margin-bottom:16px;
     }
 
@@ -147,101 +228,32 @@
       color:#0b2a4a;
     }
 
-    /* ===== 경영 이념(높이 통일 버전) ===== */
-    .philosophy-card{
-      display:grid;
-      grid-template-columns:90px 1fr; /* 아이콘 칸 고정 -> 정렬 안정 */
-      gap:22px;
-      align-items:start;             /* 텍스트는 항상 위 기준 */
+    /* ===== Footer ===== */
+    footer{
+      background:#111;
+      color:#aaa;
+      padding:40px;
+      font-size:14px;
+    }
+    footer strong{ color:#fff; }
+
+    /* ===== Responsive ===== */
+    @media(max-width:900px){
+      .philosophy-layout{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
     }
 
-    .philosophy-icon{
-      width:88px;                    /* 아이콘 크게 */
-      height:88px;
-      justify-self:center;           /* 왼쪽 칸 가운데 */
-      align-self:center;             /* 아이콘은 세로 가운데 */
-      background:#d6e9fb;
-      border-radius:50%;
-      padding:12px;
-      box-sizing:border-box;
+    @media(max-width:768px){
+      header{ padding:0 20px; }
+      .section{ padding:50px 20px; }
+      .section-inner{ padding:30px; }
+      .tl-item{ grid-template-columns:1fr; }
     }
-
-    .philosophy-content{
-      padding-top:2px;               /* 제목 라인 미세 보정 */
-    }
-
-    .philosophy-title{
-      font-size:18px;
-      font-weight:700;
-      color:#0b2a4a;
-      line-height:1.2;
-      margin:0 0 10px;
-      min-height:22px;               /* 제목 높이 통일 */
-      display:flex;
-      align-items:center;
-    }
-
-    .philosophy-text{
-      font-size:15px;
-      line-height:1.7;
-      margin:0;
-    }
-    /* ===== 경영 이념: 좌측 이미지 + 우측 세로 리스트 ===== */
-.philosophy-layout{
-  display:grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap:60px;
-  align-items:center;
-}
-
-.philosophy-image img{
-  width:100%;
-  height:100%;
-  max-height:420px;
-  object-fit:cover;
-  border-radius:12px;
-  display:block;
-}
-
-/* 우측 세로 나열 */
-.philosophy-list{
-  display:flex;
-  flex-direction:column;
-  gap:28px;
-}
-
-.philosophy-item{
-  background:#f0f3f7;
-  border-radius:10px;
-  padding:22px 24px;
-}
-
-.philosophy-item h4{
-  margin:0 0 8px;
-  font-size:20px;
-  color:#0b2a4a;
-}
-
-.philosophy-item p{
-  margin:0;
-  font-size:15px;
-  line-height:1.7;
-  color:#333;
-}
-
-/* 모바일: 위 이미지 / 아래 리스트 */
-@media(max-width:900px){
-  .philosophy-layout{
-    grid-template-columns:1fr;
-    gap:30px;
-  }
-  .philosophy-image img{
-    max-height:300px;
-  }
-}
-
   </style>
 </head>
+
 <body>
 
 <header>
@@ -260,143 +272,103 @@
   <h2>회사소개</h2>
 </section>
 
+<!-- 경영 이념 -->
 <section class="section">
   <div class="section-inner">
     <h3>경영 이념</h3>
 
     <div class="philosophy-layout">
+      <div class="philosophy-image">
+        <img src="img/about_philosophy.jpg" alt="조유시스템 경영이념">
+      </div>
 
-  <!-- 왼쪽 이미지 -->
-  <div class="philosophy-image">
-    <img src="img/about_philosophy.jpg" alt="조유시스템 경영이념 이미지">
+      <div class="philosophy-list">
+        <div class="philosophy-item">
+          <h4>Responsibility</h4>
+          <p>책임을 핵심 가치로 인식하여 고객의 지속 가능한 발전을 위해 노력하겠습니다.</p>
+        </div>
+        <div class="philosophy-item">
+          <h4>Trust</h4>
+          <p>정직과 성실한 자세로 고객과의 신뢰를 가장 최우선으로 생각하겠습니다.</p>
+        </div>
+        <div class="philosophy-item">
+          <h4>Innovation</h4>
+          <p>변화와 혁신을 통해 새로운 기술을 창조하며 경쟁력 향상을 추구하겠습니다.</p>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <!-- 오른쪽: 경영이념 세로 나열 -->
-  <div class="philosophy-list">
-
-    <div class="philosophy-item">
-      <h4>Responsibility</h4>
-      <p>
-        책임을 핵심 가치로 인식하여<br>
-        고객분들의 지속 가능한 발전을 위해 노력하겠습니다.
-      </p>
-    </div>
-
-    <div class="philosophy-item">
-      <h4>Trust</h4>
-      <p>
-        정직과 성실한 자세로<br>
-        고객과의 신뢰를 가장 최우선으로 생각하는 기업이 되겠습니다.
-      </p>
-    </div>
-
-    <div class="philosophy-item">
-      <h4>Innovation</h4>
-      <p>
-        개혁과 변화를 통해 새로운 기술을 창조하며<br>
-        경쟁력 향상을 위해 외부 변화에 신속히 대응하겠습니다.
-      </p>
-    </div>
-
-  </div>
-</div>
-
 </section>
 
+<!-- 인사말 -->
 <section class="section">
   <div class="section-inner">
     <h3>인사말</h3>
-    <div class="card">
-      <p>
-        조유시스템은 축적된 기술 노하우와 지속적인 연구개발을 통해
-        공장 자동화, 물류 시스템, 전기 제어 분야의 Total Solution을 제공하고 있습니다.
-      </p>
-      <p>
-        설계부터 제작, 시공, 시운전, 유지보수까지 전 공정을 책임지는 기술 파트너로서
-        고객의 신뢰를 최우선 가치로 삼고 있습니다.
-      </p>
-      <p>
-        앞으로도 선택과 집중을 통해 전기·제어 분야의 명품 기업으로 성장해 나가겠습니다.
-      </p>
+
+    <div class="greeting">
+      <div class="greeting-quote">
+        조유시스템은 공장 자동화, 물류 시스템, 전기·제어 분야의<br>
+        <strong>Total Solution</strong>을 제공하는 기술 파트너입니다.
+      </div>
+
+      <div class="greeting-body">
+        <p>축적된 기술 노하우와 지속적인 연구개발을 통해 고객 맞춤형 자동화 솔루션을 제공합니다.</p>
+        <p>설계부터 시공, 시운전, 유지보수까지 전 공정을 책임지는 신뢰받는 파트너가 되겠습니다.</p>
+        <p>앞으로도 전기·제어 분야의 명품 기업으로 성장해 나가겠습니다.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- 연혁 -->
 <section class="section">
   <div class="section-inner">
     <h3>연혁</h3>
-    <div class="grid">
 
-      <div class="card">
-        <strong>2017</strong>
-        <ul>
-          <li>㈜ 조유시스템 법인 설립</li>
-        </ul>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">2017</div>
+        <div class="tl-content"><ul><li>㈜ 조유시스템 법인 설립</li></ul></div>
       </div>
-
-      <div class="card">
-        <strong>2020 ~ 2021</strong>
-        <ul>
-          <li>공사 수행</li>
-          <li>시스템 준비</li>
-        </ul>
+      <div class="tl-item">
+        <div class="tl-year">2020 ~ 2021</div>
+        <div class="tl-content"><ul><li>공사 수행</li><li>시스템 준비</li></ul></div>
       </div>
-
-      <div class="card">
-        <strong>2022</strong>
-        <ul>
-          <li>화성 모트라스 조립·출하라인 공사 및 시운전</li>
-          <li>ISO 9001 품질경영시스템 인증</li>
-        </ul>
+      <div class="tl-item">
+        <div class="tl-year">2022</div>
+        <div class="tl-content"><ul><li>화성 모트라스 조립·출하라인</li><li>ISO 9001 인증</li></ul></div>
       </div>
-
-      <div class="card">
-        <strong>2023</strong>
-        <ul>
-          <li>인도네시아 LG에너지솔루션</li>
-          <li>활성화 물류 공사 및 시운전</li>
-        </ul>
+      <div class="tl-item">
+        <div class="tl-year">2023</div>
+        <div class="tl-content"><ul><li>LG에너지솔루션 물류 공사</li></ul></div>
       </div>
-
-      <div class="card">
-        <strong>2024</strong>
-        <ul>
-          <li>전기공사업 면허 취득</li>
-          <li>평택 모비스 공사 및 시운전</li>
-          <li>화성 기아 TK 메인라인 · 교육센터 공사</li>
-        </ul>
+      <div class="tl-item">
+        <div class="tl-year">2024</div>
+        <div class="tl-content"><ul><li>전기공사업 면허 취득</li></ul></div>
       </div>
-
-      <div class="card">
-        <strong>2025</strong>
-        <ul>
-          <li>울산 현대 차체 라인 공사 및 시운전</li>
-          <li>울산3 모듈 모비스 라인 공사 및 시운전</li>
-        </ul>
+      <div class="tl-item">
+        <div class="tl-year">2025</div>
+        <div class="tl-content"><ul><li>울산 현대자동차 라인 공사</li></ul></div>
       </div>
-
     </div>
   </div>
 </section>
 
+<!-- 자격증 -->
 <section class="section">
   <div class="section-inner">
     <h3>자격증 획득 현황</h3>
 
     <div class="cert-grid">
       <div class="cert-card">
-        <img src="img/cert_iso9001.png" alt="ISO 9001 인증서">
+        <img src="img/cert_iso9001.png" alt="ISO 9001">
         <p>ISO 9001 품질경영시스템 인증</p>
       </div>
-
       <div class="cert-card">
-        <img src="img/cert_electric.png" alt="전기공사업 등록증">
+        <img src="img/cert_electric.png" alt="전기공사업">
         <p>전기공사업 등록증</p>
       </div>
-
-    
     </div>
-
   </div>
 </section>
 

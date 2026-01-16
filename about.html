@@ -190,9 +190,10 @@
 }
 
 /* 원형 아이콘 */
+/* 원형 아이콘 */
 .tl-dot{
   position:absolute;
-  left:9px;            /* 🔥 라인 중앙에 정확히 */
+  left:-47px;          /* ✅ 핵심: 내용 영역 밖(라인 위치)으로 빼기 */
   top:6px;
   width:18px;
   height:18px;
@@ -201,6 +202,7 @@
   border-radius:50%;
   box-sizing:border-box;
 }
+
 
 /* 연도 */
 .tl-year{

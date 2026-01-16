@@ -312,6 +312,80 @@
       .banner h2{ font-size:32px; }
       .greeting-card{ padding:26px 24px; }
     }
+    /* ===== 인사말 (경영이념 톤과 통일된 단일 카드) ===== */
+.greeting-card{
+  background:#ffffff;
+  border-radius:14px;
+  padding:36px 40px;
+  box-shadow:0 10px 28px rgba(0,0,0,0.08);
+  border-left:5px solid #0b2a4a;
+}
+
+.greeting-subtitle{
+  font-size:18px;
+  font-weight:700;
+  color:#0b2a4a;
+  margin-bottom:18px;
+  line-height:1.6;
+}
+
+.greeting-text{
+  font-size:15px;
+  line-height:1.9;
+  color:#333;
+  margin-bottom:14px;
+}
+
+.greeting-sign{
+  margin-top:26px;
+  padding-top:18px;
+  border-top:1px solid #e5e8ef;
+  text-align:right;
+}
+
+.greeting-sign .name{
+  font-size:15px;
+  font-weight:700;
+  color:#0b2a4a;
+}
+
+.greeting-sign .title{
+  font-size:13px;
+  color:#666;
+}
+
+/* ===== 자격증 카드 (남색 제거, 이미지 중심) ===== */
+.cert-card{
+  background:#ffffff;
+  padding:26px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+
+.cert-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 30px rgba(0,0,0,0.12);
+}
+
+.cert-card img{
+  width:100%;
+  max-height:360px;
+  object-fit:contain;
+  background:#f7f8fb;
+  border-radius:10px;
+  padding:14px;
+  margin-bottom:18px;
+}
+
+.cert-card p{
+  margin:0;
+  font-size:15px;
+  font-weight:600;
+  color:#333;
+}
+
   </style>
 </head>
 
@@ -364,34 +438,44 @@
 </section>
 
 <!-- 인사말 (한 카드 + 부제목 + 대표이사 서명 라인) -->
+<!-- 인사말 -->
 <section class="section">
   <div class="section-inner">
     <h3>인사말</h3>
 
-    <div class="info-card greeting-card">
-      <p class="greeting-subtitle">
-        고객의 현장을 이해하는 기술력, 신뢰로 답하는 조유시스템
-      </p>
+    <div class="greeting-card">
+      <div class="greeting-subtitle">
+        고객의 현장을 이해하는 기술력,<br>
+        신뢰로 답하는 조유시스템
+      </div>
 
-      <p class="greeting-body">
+      <div class="greeting-text">
         조유시스템은 다년간 축적된 현장 경험과 기술 노하우를 바탕으로
-        설계부터 시공, 시운전, 유지보수까지 전 과정에서
-        안정성과 완성도를 최우선으로 생각합니다.
-        <span class="gap"></span>
-        단순한 설비 구축을 넘어 고객의 공정이 안정적으로 운영될 수 있도록
-        책임 있는 기술 지원과 장기적인 파트너십을 제공합니다.
-        <span class="gap"></span>
+        공장 자동화, 물류 시스템, 전기·제어 분야에서
+        설계부터 시공, 시운전, 유지보수까지 전 과정을 책임지고 있습니다.
+      </div>
+
+      <div class="greeting-text">
+        단순한 설비 구축을 넘어,
+        고객의 공정이 안정적이고 효율적으로 운영될 수 있도록
+        현장 중심의 기술 지원과 완성도 높은 솔루션을 제공합니다.
+      </div>
+
+      <div class="greeting-text">
         앞으로도 기본에 충실한 기술력과 성실한 자세로
-        신뢰받는 파트너가 되기 위해 끊임없이 노력하겠습니다.
-      </p>
+        고객과 함께 성장하는 신뢰받는 기업이 되기 위해
+        끊임없이 노력하겠습니다.
+      </div>
 
       <div class="greeting-sign">
-        <span class="label">대표이사</span>
-        <span class="name">조동현</span>
+        <div class="title">㈜ 조유시스템 대표이사</div>
+        <div class="name">조 동 현</div>
       </div>
     </div>
+
   </div>
 </section>
+
 
 <!-- 연혁 -->
 <section class="section">

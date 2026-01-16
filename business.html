@@ -50,28 +50,44 @@ nav a.active {
 }
 
 
-    .banner {
-  background: linear-gradient(
-    rgba(11,42,74,0.95),
-    rgba(11,42,74,0.85)
-  );
-  padding: 100px 40px;
-  color: #fff;
+    /* ===== Banner (business) ===== */
+.banner{
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url('img/business_banner.jpg'); /* ✅ 여기만 네 이미지 파일명으로 변경 */
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  min-height:65vh;                /* 배너 더 크게 */
+  padding:0 40px;
+  color:#fff;
+  display:flex;
+  align-items:center;
 }
 
-    .banner h2{ font-size:40px; margin:0; }
+.banner-inner{
+  max-width:1200px;
+  margin:0 auto;
+  width:100%;
+}
 
-    .section{ padding:80px 40px; }
+.banner h2{
+  font-size:44px;
+  margin:0;
+  text-shadow:0 2px 6px rgba(0,0,0,0.4);
+}
 
-    /* about.html과 동일한 흰 박스(섹션) */
-    .section-inner{
-      background:#ffffff;
-      padding:60px;
-      border-radius:12px;
-      max-width:1200px;
-      margin:0 auto;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    }
+/* 모바일 */
+@media(max-width:768px){
+  .banner{
+    min-height:45vh;
+    padding:0 20px;
+  }
+  .banner h2{
+    font-size:32px;
+  }
+}
+
 
     .section h3{ font-size:28px; margin:0 0 30px; color:#0b2a4a; }
 
@@ -105,8 +121,11 @@ nav a.active {
 </header>
 
 <section class="banner">
-  <h2>사업분야</h2>
+  <div class="banner-inner">
+    <h2>사업분야</h2>
+  </div>
 </section>
+
 
 <!-- ✅ 사업분야(요약) : index에서 가져온 카드 -->
 <section class="section">

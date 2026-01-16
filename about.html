@@ -143,59 +143,73 @@
       color:#444;
     }
 
-    /* ===== 인사말 (고급화) ===== */
+    /* ===== 인사말 ===== */
     .greeting{
-      background:#fff;
+      background:#f8f9fb;
       border-radius:14px;
-      padding:40px 42px;
-      box-shadow:0 12px 30px rgba(0,0,0,0.08);
-      border-left:5px solid #0b2a4a;
+      padding:36px;
     }
 
     .greeting-head{
-      font-size:20px;
+      font-size:18px;
       font-weight:700;
       color:#0b2a4a;
-      line-height:1.6;
-      margin-bottom:26px;
+      margin-bottom:20px;
     }
 
     .greeting-body p{
-      margin:0 0 16px;
+      margin:0 0 14px;
       font-size:15px;
       line-height:1.9;
-      color:#444;
+      color:#333;
     }
 
-    .greeting-body p:last-child{ margin-bottom:0; }
-
-    /* ===== 연혁 ===== */
+    /* ===== 연혁 (타임라인 스타일) ===== */
     .timeline{
+      position:relative;
+      padding-left:40px;
       display:flex;
       flex-direction:column;
-      gap:18px;
+      gap:48px;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:12px;
+      top:0;
+      width:3px;
+      height:100%;
+      background:rgba(11,42,74,0.22);
+      border-radius:2px;
     }
 
     .tl-item{
-      display:grid;
-      grid-template-columns:160px 1fr;
-      gap:18px;
-      background:#f0f3f7;
-      border-radius:14px;
-      padding:20px;
+      position:relative;
+    }
+
+    .tl-dot{
+      position:absolute;
+      left:-2px;
+      top:4px;
+      width:18px;
+      height:18px;
+      background:#fff;
+      border:3px solid #0b2a4a;
+      border-radius:50%;
     }
 
     .tl-year{
+      font-size:20px;
       font-weight:800;
       color:#0b2a4a;
-      font-size:16px;
+      margin-bottom:8px;
     }
 
-    .tl-content ul{
-      margin:0;
-      padding-left:18px;
+    .tl-text{
       font-size:15px;
       line-height:1.8;
+      color:#333;
     }
 
     /* ===== 자격증 ===== */
@@ -256,16 +270,8 @@
       header{ padding:0 20px; }
       .section{ padding:50px 20px; }
       .section-inner{ padding:30px; }
-      .tl-item{ grid-template-columns:1fr; }
-
-      .banner{
-        min-height:45vh;
-        padding:0 20px;
-      }
-
-      .banner h2{
-        font-size:32px;
-      }
+      .banner{ min-height:45vh; padding:0 20px; }
+      .banner h2{ font-size:32px; }
     }
   </style>
 </head>
@@ -322,127 +328,3 @@
 <section class="section">
   <div class="section-inner">
     <h3>인사말</h3>
-
-    <div class="greeting">
-      <div class="greeting-head">
-        조유시스템은 고객의 현장을 깊이 이해하고,<br>
-        기술의 완성도로 신뢰에 보답하는 기업을 지향합니다.
-      </div>
-
-      <div class="greeting-body">
-        <p>
-          다년간 축적된 현장 경험과 기술 노하우를 바탕으로,
-          설계부터 시공, 시운전, 유지보수에 이르기까지
-          모든 과정에서 안정성과 품질을 최우선으로 생각합니다.
-        </p>
-
-        <p>
-          단순한 설비 구축을 넘어,
-          고객의 공정이 안정적으로 운영될 수 있도록
-          책임 있는 기술 지원을 제공하고 있습니다.
-        </p>
-
-        <p>
-          앞으로도 조유시스템은 기본에 충실한 기술력과
-          성실한 자세로 신뢰받는 파트너가 되기 위해
-          끊임없이 노력하겠습니다.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 연혁 -->
-<section class="section">
-  <div class="section-inner">
-    <h3>연혁</h3>
-
-    <div class="timeline">
-
-      <div class="tl-item">
-        <div class="tl-year">2017</div>
-        <div class="tl-content">
-          <ul>
-            <li>㈜ 조유시스템 법인 설립</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-year">2020 ~ 2021</div>
-        <div class="tl-content">
-          <ul>
-            <li>공사 수행</li>
-            <li>시스템 준비</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-year">2022</div>
-        <div class="tl-content">
-          <ul>
-            <li>화성 모트라스 조립·출하라인 공사</li>
-            <li>ISO 9001 품질경영시스템 인증</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-year">2023</div>
-        <div class="tl-content">
-          <ul>
-            <li>LG에너지솔루션 물류 공사</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-year">2024</div>
-        <div class="tl-content">
-          <ul>
-            <li>전기공사업 면허 취득</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-year">2025</div>
-        <div class="tl-content">
-          <ul>
-            <li>울산 현대자동차 라인 공사</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- 자격증 -->
-<section class="section">
-  <div class="section-inner">
-    <h3>자격증 획득 현황</h3>
-
-    <div class="cert-grid">
-      <div class="cert-card">
-        <img src="img/cert_iso9001.png" alt="ISO 9001">
-        <p>ISO 9001 품질경영시스템 인증</p>
-      </div>
-      <div class="cert-card">
-        <img src="img/cert_electric.png" alt="전기공사업">
-        <p>전기공사업 등록증</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <strong>㈜ 조유시스템</strong><br>
-  인천광역시 서구 가정로 37번길 37-22<br>
-  TEL. 032-471-1101 | FAX. 032-462-1102
-</footer>
-
-</body>
-</html>

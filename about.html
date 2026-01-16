@@ -165,52 +165,58 @@
     }
 
     /* ===== 연혁 (타임라인 스타일) ===== */
-    .timeline{
-      position:relative;
-      padding-left:40px;
-      display:flex;
-      flex-direction:column;
-      gap:48px;
-    }
+    /* ===== 연혁 (겹침 해결 버전) ===== */
+.timeline{
+  position:relative;
+  padding-left:56px;   /* 🔥 전체를 오른쪽으로 밀기 */
+  display:flex;
+  flex-direction:column;
+  gap:48px;
+}
 
-    .timeline::before{
-      content:"";
-      position:absolute;
-      left:12px;
-      top:0;
-      width:3px;
-      height:100%;
-      background:rgba(11,42,74,0.22);
-      border-radius:2px;
-    }
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:18px;           /* 🔥 라인 위치 조정 */
+  top:0;
+  width:3px;
+  height:100%;
+  background:rgba(11,42,74,0.22);
+  border-radius:2px;
+}
 
-    .tl-item{
-      position:relative;
-    }
+.tl-item{
+  position:relative;
+}
 
-    .tl-dot{
-      position:absolute;
-      left:-2px;
-      top:4px;
-      width:18px;
-      height:18px;
-      background:#fff;
-      border:3px solid #0b2a4a;
-      border-radius:50%;
-    }
+/* 원형 아이콘 */
+.tl-dot{
+  position:absolute;
+  left:9px;            /* 🔥 라인 중앙에 정확히 */
+  top:6px;
+  width:18px;
+  height:18px;
+  background:#fff;
+  border:3px solid #0b2a4a;
+  border-radius:50%;
+  box-sizing:border-box;
+}
 
-    .tl-year{
-      font-size:20px;
-      font-weight:800;
-      color:#0b2a4a;
-      margin-bottom:8px;
-    }
+/* 연도 */
+.tl-year{
+  font-size:20px;
+  font-weight:800;
+  color:#0b2a4a;
+  margin-bottom:6px;
+}
 
-    .tl-text{
-      font-size:15px;
-      line-height:1.8;
-      color:#333;
-    }
+/* 내용 */
+.tl-text{
+  font-size:15px;
+  line-height:1.8;
+  color:#333;
+}
+
 
     /* ===== 자격증 ===== */
     .cert-grid{

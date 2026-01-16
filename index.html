@@ -11,6 +11,8 @@
       font-family: 'Segoe UI', 'Pretendard', sans-serif;
       background: #f5f7fa;
       color: #222;
+
+      padding-top: 64px;
     }
 
     /* ===== Header ===== */
@@ -58,23 +60,37 @@
 
     /* ===== Hero ===== */
     .hero {
-      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('hero.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 120px 40px;
-      color: #fff;
-    }
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    .hero h2 {
-      font-size: 42px;
-      margin: 0 0 20px;
-    }
+  min-height: 70vh;
+  padding: 0 40px;
+  color: #fff;
 
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      line-height: 1.7;
-    }
+  display: flex;
+  align-items: center;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 44px;
+  margin: 0 0 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
 
     /* ===== Section ===== */
     .section {

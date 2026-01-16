@@ -186,6 +186,60 @@
       line-height:1.7;
       margin:0;
     }
+    /* ===== 경영 이념: 좌측 이미지 + 우측 세로 리스트 ===== */
+.philosophy-layout{
+  display:grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap:60px;
+  align-items:center;
+}
+
+.philosophy-image img{
+  width:100%;
+  height:100%;
+  max-height:420px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+
+/* 우측 세로 나열 */
+.philosophy-list{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+
+.philosophy-item{
+  background:#f0f3f7;
+  border-radius:10px;
+  padding:22px 24px;
+}
+
+.philosophy-item h4{
+  margin:0 0 8px;
+  font-size:20px;
+  color:#0b2a4a;
+}
+
+.philosophy-item p{
+  margin:0;
+  font-size:15px;
+  line-height:1.7;
+  color:#333;
+}
+
+/* 모바일: 위 이미지 / 아래 리스트 */
+@media(max-width:900px){
+  .philosophy-layout{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+  .philosophy-image img{
+    max-height:300px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -210,43 +264,43 @@
   <div class="section-inner">
     <h3>경영 이념</h3>
 
-    <div class="grid">
+    <div class="philosophy-layout">
 
-      <div class="card philosophy-card">
-        <img src="img/icon_responsibility.png" alt="Responsibility" class="philosophy-icon">
-        <div class="philosophy-content">
-          <div class="philosophy-title">Responsibility</div>
-          <p class="philosophy-text">
-            책임을 핵심 가치로 인식하여<br>
-            고객분들의 지속 가능한 발전을 위해 노력하겠습니다.
-          </p>
-        </div>
-      </div>
-
-      <div class="card philosophy-card">
-        <img src="img/icon_trust.png" alt="Trust" class="philosophy-icon">
-        <div class="philosophy-content">
-          <div class="philosophy-title">Trust</div>
-          <p class="philosophy-text">
-            정직과 성실한 자세로<br>
-            고객과의 신뢰를 가장 최우선으로 생각하는 기업이 되겠습니다.
-          </p>
-        </div>
-      </div>
-
-      <div class="card philosophy-card">
-        <img src="img/icon_innovation.png" alt="Innovation" class="philosophy-icon">
-        <div class="philosophy-content">
-          <div class="philosophy-title">Innovation</div>
-          <p class="philosophy-text">
-            개혁과 변화를 통해 새로운 기술을 창조하며<br>
-            경쟁력 향상을 위해 외부 변화에 신속히 대응하겠습니다.
-          </p>
-        </div>
-      </div>
-
-    </div>
+  <!-- 왼쪽 이미지 -->
+  <div class="philosophy-image">
+    <img src="img/about_philosophy.jpg" alt="조유시스템 경영이념 이미지">
   </div>
+
+  <!-- 오른쪽: 경영이념 세로 나열 -->
+  <div class="philosophy-list">
+
+    <div class="philosophy-item">
+      <h4>Responsibility</h4>
+      <p>
+        책임을 핵심 가치로 인식하여<br>
+        고객분들의 지속 가능한 발전을 위해 노력하겠습니다.
+      </p>
+    </div>
+
+    <div class="philosophy-item">
+      <h4>Trust</h4>
+      <p>
+        정직과 성실한 자세로<br>
+        고객과의 신뢰를 가장 최우선으로 생각하는 기업이 되겠습니다.
+      </p>
+    </div>
+
+    <div class="philosophy-item">
+      <h4>Innovation</h4>
+      <p>
+        개혁과 변화를 통해 새로운 기술을 창조하며<br>
+        경쟁력 향상을 위해 외부 변화에 신속히 대응하겠습니다.
+      </p>
+    </div>
+
+  </div>
+</div>
+
 </section>
 
 <section class="section">

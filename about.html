@@ -168,7 +168,9 @@
     /* ===== 연혁 (겹침 해결 버전) ===== */
 .timeline{
   position:relative;
-  padding-left:56px;   /* 🔥 전체를 오른쪽으로 밀기 */
+  padding-left:56px;
+  max-width:760px;        /* 🔥 핵심: 폭 제한 */
+  margin-left:40px;      /* 🔥 오른쪽으로 이동 */
   display:flex;
   flex-direction:column;
   gap:48px;

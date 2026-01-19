@@ -57,19 +57,48 @@
     }
 
     /* ===== BANNER ===== */
-    .banner {
-      background: linear-gradient(
-        rgba(11,42,74,0.95),
-        rgba(11,42,74,0.85)
-      );
-      padding: 100px 40px;
-      color: #fff;
-    }
+    /* ===== BANNER (회사소개/사업분야와 동일) ===== */
+.banner{
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url('img/tech_banner.jpg');   /* 🔥 네가 정한 이미지 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    .banner h2 {
-      font-size: 40px;
-      margin: 0;
-    }
+  min-height: 65vh;
+  padding: 0 40px;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.banner h2{
+  font-size: 44px;
+  margin: 0;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* 모바일 */
+@media (max-width: 768px){
+  .banner{
+    min-height: 45vh;
+    padding: 0 20px;
+  }
+  .banner h2{
+    font-size: 32px;
+  }
+}
+
 
     /* ===== SECTION ===== */
     .section {
@@ -156,8 +185,11 @@
 
 <!-- BANNER -->
 <section class="banner">
-  <h2>핵심기술</h2>
+  <div class="banner-inner">
+    <h2>핵심기술</h2>
+  </div>
 </section>
+
 
 <!-- PROCESS 기술 -->
 <section class="section">

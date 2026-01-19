@@ -58,27 +58,28 @@
 
     /* ===== BANNER ===== */
     /* ===== BANNER (회사소개/사업분야와 동일) ===== */
+/* ===== BANNER (회사소개 / 사업분야 / 주요실적과 통일) ===== */
 .banner{
   background:
     linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url('img/tech_banner.jpg');   /* 🔥 네가 정한 이미지 */
+    url('img/tech_banner.jpg'); /* 네가 정한 이미지 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  min-height: 65vh;
+  min-height: 65vh;          /* ✅ 핵심: 높이 통일 */
   padding: 0 40px;
   color: #fff;
 
-  display: flex;
+  display: flex;             /* ✅ 가운데 정렬 */
   align-items: center;
   justify-content: center;
 }
 
 .banner-inner{
   max-width: 1200px;
-  margin: 0 auto;
   width: 100%;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -94,10 +95,12 @@
     min-height: 45vh;
     padding: 0 20px;
   }
+
   .banner h2{
     font-size: 32px;
   }
 }
+
 
 
     /* ===== SECTION ===== */

@@ -241,6 +241,12 @@
   }
 }
  /* ===== 헤더 로고 ===== */
+header h1{
+  margin:0;
+  font-size:0;
+  line-height:1;
+}
+
 .brand{
   display:flex;
   align-items:center;
@@ -250,8 +256,18 @@
 .brand img{
   width:60px;
   height:60px;
+  object-fit:contain;
   transform: translateY(2px);
+  display:block;
 }
+
+.brand span{
+  font-size:22px;
+  font-weight:700;
+  line-height:1;
+  display:block;
+}
+
 
   </style>
 </head>

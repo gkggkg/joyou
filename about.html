@@ -389,17 +389,19 @@
 .brand{
   display:flex;
   align-items:center;
-  gap:0.5px;
+  gap:0;
 }
 
 .brand img{
-  width:60px;          /* 로고 크기 (원하면 24~32로 조절) */
-  height:60px;
-  object-fit:contain;
-  display:block;
-  /* 검은 로고가 어두운 헤더에서 안 보이면 아래 필터 사용 */
+  width:48px;
+  height:48px;
   transform: translateY(2px);
 }
+
+.brand span{
+  margin-left:2px;
+}
+
 
 
   </style>

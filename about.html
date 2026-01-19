@@ -385,6 +385,22 @@
   font-weight:600;
   color:#333;
 }
+    /* ===== 헤더 로고 ===== */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand img{
+  width:28px;          /* 로고 크기 (원하면 24~32로 조절) */
+  height:28px;
+  object-fit:contain;
+  display:block;
+  /* 검은 로고가 어두운 헤더에서 안 보이면 아래 필터 사용 */
+  filter: invert(1);   /* 필요 없으면 삭제 */
+}
+
 
   </style>
 </head>
@@ -392,7 +408,11 @@
 <body>
 
 <header>
-  <h1>조유시스템</h1>
+  <h1 class="brand">
+  <img src="img/mark.png" alt="조유시스템 로고">
+  <span>조유시스템</span>
+</h1>
+
   <nav>
     <a href="index.html">홈</a>
     <a href="about.html" class="active">회사소개</a>

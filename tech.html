@@ -240,6 +240,18 @@
     max-width:100%;
   }
 }
+ /* ===== 헤더 로고 ===== */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:0;
+}
+
+.brand img{
+  width:60px;
+  height:60px;
+  transform: translateY(2px);
+}
 
   </style>
 </head>
@@ -248,7 +260,11 @@
 
 <!-- HEADER -->
 <header>
-  <h1>조유시스템</h1>
+  <h1 class="brand">
+  <img src="img/mark.png" alt="조유시스템 로고">
+  <span>조유시스템</span>
+</h1>
+
   <nav>
     <a href="index.html">홈</a>
     <a href="about.html">회사소개</a>

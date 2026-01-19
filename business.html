@@ -15,7 +15,7 @@
       padding-top:64px;
     }
 
-    /* ===== Header ===== */
+    /* ===== Header (index 기준 통일) ===== */
     header{
       background:#0b2a4a;
       color:#fff;
@@ -30,8 +30,39 @@
       width:100%;
       z-index:1000;
     }
-    header h1{ margin:0; font-size:22px; }
-    nav{ display:flex; align-items:center; }
+
+    header h1{
+      margin:0;
+      font-size:0;       /* ✅ 글자 높이 영향 제거 */
+      line-height:1;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:0;
+    }
+
+    .brand img{
+      width:60px;
+      height:60px;
+      object-fit:contain;
+      transform:translateY(2px);
+      display:block;
+    }
+
+    .brand span{
+      font-size:22px;
+      font-weight:700;
+      line-height:1;
+      display:block;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+    }
+
     nav a{
       color:#fff;
       margin-left:20px;
@@ -40,9 +71,12 @@
       padding-bottom:6px;
       display:inline-block;
     }
-    nav a.active{ border-bottom:3px solid #fff; }
 
-    /* ===== Banner (회사소개와 동일 구조) ===== */
+    nav a.active{
+      border-bottom:3px solid #fff;
+    }
+
+    /* ===== Banner ===== */
     .banner{
       background:
         linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
@@ -50,17 +84,23 @@
       background-size:cover;
       background-position:center;
       background-repeat:no-repeat;
+
       min-height:65vh;
       padding:0 40px;
       color:#fff;
+
       display:flex;
       align-items:center;
+      justify-content:center;
+      text-align:center;
     }
+
     .banner-inner{
       max-width:1200px;
-      margin:0 auto;
       width:100%;
+      margin:0 auto;
     }
+
     .banner h2{
       font-size:44px;
       margin:0;
@@ -86,6 +126,7 @@
       position:relative;
       padding-bottom:14px;
     }
+
     .section h3::after{
       content:"";
       position:absolute;
@@ -97,7 +138,7 @@
       border-radius:2px;
     }
 
-    /* ===== 지그재그 비즈니스 섹션 ===== */
+    /* ===== 지그재그 사업 영역 ===== */
     .biz-wrap{
       display:flex;
       flex-direction:column;
@@ -130,7 +171,6 @@
       transition:transform .65s ease;
     }
 
-    /* Hover 효과 */
     .biz-media:hover img{
       transform:scale(1.08);
     }
@@ -157,6 +197,7 @@
       padding:40px;
       font-size:14px;
     }
+
     footer strong{ color:#fff; }
 
     /* ===== Responsive ===== */
@@ -178,34 +219,14 @@
         min-height:45vh;
         padding:0 20px;
       }
+
       .banner h2{ font-size:32px; }
 
       .section{ padding:50px 20px; }
       .section-inner{ padding:30px; }
 
-      .section h3{ margin-bottom:34px; }
       .biz-wrap{ gap:60px; }
     }
-    .banner{
-  display:flex;
-  align-items:center;
-  justify-content:center;   /* 🔥 가로 가운데 */
-  text-align:center;        /* 🔥 텍스트 중앙 */
-}
-     /* ===== 헤더 로고 ===== */
-.brand{
-  display:flex;
-  align-items:center;
-  gap:0;
-}
-
-.brand img{
-  width:60px;
-  height:60px;
-  transform: translateY(2px);
-}
-
-
   </style>
 </head>
 
@@ -213,9 +234,9 @@
 
 <header>
   <h1 class="brand">
-  <img src="img/mark.png" alt="조유시스템 로고">
-  <span>조유시스템</span>
-</h1>
+    <img src="img/mark.png" alt="조유시스템 로고">
+    <span>조유시스템</span>
+  </h1>
 
   <nav>
     <a href="index.html">홈</a>
@@ -239,7 +260,6 @@
 
     <div class="biz-wrap">
 
-      <!-- 1) 사진 - FA 자동화 제어 -->
       <div class="biz-row">
         <div class="biz-media">
           <img src="img/business_fa.jpg" alt="FA 자동화 제어">
@@ -253,7 +273,6 @@
         </div>
       </div>
 
-      <!-- 2) PLC/HMI 설계 - 사진 -->
       <div class="biz-row reverse">
         <div class="biz-media">
           <img src="img/business_plc.jpg" alt="PLC / HMI 설계">
@@ -261,13 +280,12 @@
         <div class="biz-text">
           <h4>PLC / HMI 설계</h4>
           <p>
-            Siemens, Mitsubishi, LS 등 다양한 플랫폼 기반의 제어 프로그램을 구축하고,
-            작업자 관점의 직관적인 HMI 화면으로 운영 효율을 높입니다.
+            Siemens, Mitsubishi, LS 등 다양한 플랫폼 기반의 제어 프로그램을 구축하고
+            직관적인 HMI 화면으로 운영 효율을 극대화합니다.
           </p>
         </div>
       </div>
 
-      <!-- 3) 사진 - 물류 제어 시스템 -->
       <div class="biz-row">
         <div class="biz-media">
           <img src="img/business_logistics.jpg" alt="물류 제어 시스템">
@@ -275,13 +293,12 @@
         <div class="biz-text">
           <h4>물류 제어 시스템</h4>
           <p>
-            자동창고(AS/RS), 자동분류, 배터리 물류 등 다양한 물류 라인의
+            자동창고, 자동 분류, 배터리 물류 등 다양한 물류 라인의
             이송·제어·운영을 통합적으로 지원합니다.
           </p>
         </div>
       </div>
 
-      <!-- 4) 전기 공사 - 사진 -->
       <div class="biz-row reverse">
         <div class="biz-media">
           <img src="img/business_electric.jpg" alt="전기 공사">

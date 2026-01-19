@@ -12,10 +12,10 @@
       font-family:'Segoe UI','Pretendard',sans-serif;
       color:#222;
       background:#f5f7fa;
-      padding-top:64px;
+      padding-top:64px; /* 고정 헤더 보정 */
     }
 
-    /* ===== Header ===== */
+    /* ===== Header (index 기준 통일) ===== */
     header{
       background:#0b2a4a;
       color:#fff;
@@ -25,14 +25,45 @@
       justify-content:space-between;
       align-items:center;
       box-sizing:border-box;
+
       position:fixed;
-      top:0; left:0;
+      top:0;
+      left:0;
       width:100%;
       z-index:1000;
     }
 
-    header h1{ margin:0; font-size:22px; }
-    nav{ display:flex; align-items:center; }
+    header h1{
+      margin:0;
+      font-size:0;
+      line-height:1;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:0;
+    }
+
+    .brand img{
+      width:60px;
+      height:60px;
+      object-fit:contain;
+      transform:translateY(2px);
+      display:block;
+    }
+
+    .brand span{
+      font-size:22px;
+      font-weight:700;
+      line-height:1;
+      display:block;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+    }
 
     nav a{
       color:#fff;
@@ -40,26 +71,36 @@
       text-decoration:none;
       font-size:14px;
       padding-bottom:6px;
+      display:inline-block;
     }
-    nav a.active{ border-bottom:3px solid #fff; }
+
+    nav a.active{
+      border-bottom:3px solid #fff;
+    }
 
     /* ===== Banner ===== */
     .banner{
       background:
         linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-        url('img/about_banner.jpg');
+        url('img/about_banner.jpg'); /* ✅ 네 배너 이미지 */
       background-size:cover;
       background-position:center;
+      background-repeat:no-repeat;
+
       min-height:65vh;
       padding:0 40px;
       color:#fff;
+
       display:flex;
       align-items:center;
+      justify-content:center;
     }
 
     .banner-inner{
       max-width:1200px;
+      width:100%;
       margin:0 auto;
+      text-align:center;
     }
 
     .banner h2{
@@ -99,7 +140,7 @@
       border-radius:2px;
     }
 
-    /* ===== 공통 카드(경영이념 느낌) ===== */
+    /* ===== 공통 카드 ===== */
     .info-card{
       background:#fff;
       border-radius:12px;
@@ -134,6 +175,7 @@
       max-height:420px;
       object-fit:cover;
       border-radius:14px;
+      display:block;
     }
 
     .philosophy-list{
@@ -142,55 +184,49 @@
       gap:22px;
     }
 
-    /* ===== 인사말 (한 카드 + 부제목 + 서명 라인) ===== */
+    /* ===== 인사말 ===== */
     .greeting-card{
-      padding:34px 34px;
+      background:#ffffff;
+      border-radius:14px;
+      padding:36px 40px;
+      box-shadow:0 10px 28px rgba(0,0,0,0.08);
+      border-left:5px solid #0b2a4a;
     }
 
     .greeting-subtitle{
-      font-size:16px;
-      font-weight:800;
-      letter-spacing:-0.2px;
+      font-size:18px;
+      font-weight:700;
       color:#0b2a4a;
-      margin:0 0 14px;
+      margin:0 0 18px;
       line-height:1.6;
     }
 
-    .greeting-body{
-      margin:0;
+    .greeting-text{
       font-size:15px;
-      line-height:1.95;
+      line-height:1.9;
       color:#333;
-    }
-
-    .greeting-body .gap{
-      display:block;
-      height:12px;
+      margin:0 0 14px;
     }
 
     .greeting-sign{
-      margin-top:22px;
-      padding-top:16px;
-      border-top:1px solid rgba(11,42,74,0.14);
-      display:flex;
-      justify-content:flex-end;
-      align-items:baseline;
-      gap:10px;
-      color:#0b2a4a;
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid #e5e8ef;
+      text-align:right;
     }
 
-    .greeting-sign .label{
+    .greeting-sign .title{
       font-size:13px;
-      color:rgba(11,42,74,0.7);
+      color:#666;
     }
 
     .greeting-sign .name{
       font-size:15px;
-      font-weight:800;
-      letter-spacing:-0.1px;
+      font-weight:700;
+      color:#0b2a4a;
     }
 
-    /* ===== 연혁 (타임라인) ===== */
+    /* ===== 연혁 ===== */
     .timeline{
       position:relative;
       padding-left:56px;
@@ -239,14 +275,13 @@
       color:#333;
     }
 
-    /* ===== 자격증 (남색 느낌 제거/깔끔하게) ===== */
+    /* ===== 자격증 ===== */
     .cert-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
       gap:30px;
     }
 
-    /* ✅ 남색/카드 느낌 최소화: 흰 바탕 + 얇은 테두리 */
     .cert-card{
       background:#fff;
       border:1px solid #e8ecf3;
@@ -262,7 +297,6 @@
       border-color:#d9e1ef;
     }
 
-    /* ✅ 이미지 주변 남색/배경 제거: 투명 + 깔끔 */
     .cert-card img{
       width:100%;
       max-height:320px;
@@ -274,7 +308,6 @@
       display:block;
     }
 
-    /* ✅ 텍스트도 남색 약하게 */
     .cert-card p{
       margin:0;
       font-size:14px;
@@ -306,98 +339,17 @@
 
     @media(max-width:768px){
       header{ padding:0 20px; }
+
+      .banner{
+        min-height:45vh;
+        padding:0 20px;
+      }
+      .banner h2{ font-size:32px; }
+
       .section{ padding:50px 20px; }
       .section-inner{ padding:30px; }
-      .banner{ min-height:45vh; padding:0 20px; }
-      .banner h2{ font-size:32px; }
       .greeting-card{ padding:26px 24px; }
     }
-    /* ===== 인사말 (경영이념 톤과 통일된 단일 카드) ===== */
-.greeting-card{
-  background:#ffffff;
-  border-radius:14px;
-  padding:36px 40px;
-  box-shadow:0 10px 28px rgba(0,0,0,0.08);
-  border-left:5px solid #0b2a4a;
-}
-
-.greeting-subtitle{
-  font-size:18px;
-  font-weight:700;
-  color:#0b2a4a;
-  margin-bottom:18px;
-  line-height:1.6;
-}
-
-.greeting-text{
-  font-size:15px;
-  line-height:1.9;
-  color:#333;
-  margin-bottom:14px;
-}
-
-.greeting-sign{
-  margin-top:26px;
-  padding-top:18px;
-  border-top:1px solid #e5e8ef;
-  text-align:right;
-}
-
-.greeting-sign .name{
-  font-size:15px;
-  font-weight:700;
-  color:#0b2a4a;
-}
-
-.greeting-sign .title{
-  font-size:13px;
-  color:#666;
-}
-
-/* ===== 자격증 카드 (남색 제거, 이미지 중심) ===== */
-.cert-card{
-  background:#ffffff;
-  padding:26px;
-  border-radius:14px;
-  text-align:center;
-  box-shadow:0 8px 24px rgba(0,0,0,0.08);
-  transition:transform .15s ease, box-shadow .15s ease;
-}
-
-.cert-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 14px 30px rgba(0,0,0,0.12);
-}
-
-.cert-card img{
-  width:100%;
-  max-height:360px;
-  object-fit:contain;
-  background:#f7f8fb;
-  border-radius:10px;
-  padding:14px;
-  margin-bottom:18px;
-}
-
-.cert-card p{
-  margin:0;
-  font-size:15px;
-  font-weight:600;
-  color:#333;
-}
-    /* ===== 헤더 로고 ===== */
-.brand{
-  display:flex;
-  align-items:center;
-  gap:0;
-}
-
-.brand img{
-  width:60px;
-  height:60px;
-  transform: translateY(2px);
-}
-
   </style>
 </head>
 
@@ -405,9 +357,9 @@
 
 <header>
   <h1 class="brand">
-  <img src="img/mark.png" alt="조유시스템 로고">
-  <span>조유시스템</span>
-</h1>
+    <img src="img/mark.png" alt="조유시스템 로고">
+    <span>조유시스템</span>
+  </h1>
 
   <nav>
     <a href="index.html">홈</a>
@@ -453,7 +405,6 @@
   </div>
 </section>
 
-<!-- 인사말 (한 카드 + 부제목 + 대표이사 서명 라인) -->
 <!-- 인사말 -->
 <section class="section">
   <div class="section-inner">
@@ -465,33 +416,29 @@
         신뢰로 답하는 조유시스템
       </div>
 
-      <div class="greeting-text">
+      <p class="greeting-text">
         조유시스템은 다년간 축적된 현장 경험과 기술 노하우를 바탕으로
-        공장 자동화, 물류 시스템, 전기·제어 분야에서
-        설계부터 시공, 시운전, 유지보수까지 전 과정을 책임지고 있습니다.
-      </div>
+        공장 자동화, 물류 시스템, 전기·제어 분야에서 설계부터 시공,
+        시운전, 유지보수까지 전 과정을 책임지고 있습니다.
+      </p>
 
-      <div class="greeting-text">
-        단순한 설비 구축을 넘어,
-        고객의 공정이 안정적이고 효율적으로 운영될 수 있도록
+      <p class="greeting-text">
+        단순한 설비 구축을 넘어 고객의 공정이 안정적이고 효율적으로 운영될 수 있도록
         현장 중심의 기술 지원과 완성도 높은 솔루션을 제공합니다.
-      </div>
+      </p>
 
-      <div class="greeting-text">
-        앞으로도 기본에 충실한 기술력과 성실한 자세로
-        고객과 함께 성장하는 신뢰받는 기업이 되기 위해
-        끊임없이 노력하겠습니다.
-      </div>
+      <p class="greeting-text">
+        앞으로도 기본에 충실한 기술력과 성실한 자세로 고객과 함께 성장하는
+        신뢰받는 기업이 되기 위해 끊임없이 노력하겠습니다.
+      </p>
 
       <div class="greeting-sign">
         <div class="title">㈜ 조유시스템 대표이사</div>
         <div class="name">조 동 현</div>
       </div>
     </div>
-
   </div>
 </section>
-
 
 <!-- 연혁 -->
 <section class="section">
@@ -526,13 +473,13 @@
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">2024년</div>
-        <div class="tl-text">전기공사업 면허 취득 및 평택모비스(자동차엔진), 화성기아 TK메인라인, 교육센터(시작실) 공사 및 시운전</div>
+        <div class="tl-text">전기공사업 면허 취득 및 주요 프로젝트 수행</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">2025년</div>
-        <div class="tl-text">울산 현대 차체 라인 공사 및 시운전, 울산 3모듈 모비스 라인 공사 및 시운전</div>
+        <div class="tl-text">울산 현대 차체 라인 공사 및 시운전 등</div>
       </div>
     </div>
   </div>
